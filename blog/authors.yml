@@ -1,0 +1,17 @@
+byte:
+  name: Byte
+  title: Разработчик QSP
+  url: https://github.com/hzdbyte
+  image_url: https://github.com/hzdbyte.png
+
+werewolf:
+  name: Werewolf
+  title: Разработчик QSpider
+  url: https://github.com/srg-kostyrko
+  image_url: https://github.com/srg-kostyrko.png
+
+fering:
+  name: Fering
+  title: Разработчик Qsp.FSharp
+  url: https://github.com/gretmn102
+  image_url: https://github.com/gretmn102.png
