@@ -1,8 +1,6 @@
 ﻿# Qsp.FSharp.Parser
 
-<!-- todo: добавить ссылку на исходники -->
-
-Qsp.FSharp.Parser разрабатывается для сред разработки, которые поддерживают LSP (к примеру, VS Code, для расширения которого всё это и затевалось).
+[Qsp.FSharp.Parser](https://github.com/QSPFoundation/Qsp.FSharp/tree/master/src/Qsp.FSharp.Core) разрабатывается для сред разработки, которые поддерживают LSP (к примеру, VS Code, для [расширения](https://github.com/QSPFoundation/Qsp.FSharp.VsCode) которого всё это и затевалось).
 
 Qsp.FSharp.Parser парсит вообще весь исходник сразу (в чем принимал но отличается от [парсера в QSPLIB](./qsplib-parser.md)) и попутно собирает:
 
