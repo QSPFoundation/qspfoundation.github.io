@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkBreaks from 'remark-breaks';
 
 const config: Config = {
   title: 'QSP Foundation',
@@ -39,6 +40,7 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/QSPFoundation/qsp-docs/tree/main/',
+          remarkPlugins: [remarkBreaks],
         },
         blog: {
           showReadingTime: true,
@@ -46,6 +48,7 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/QSPFoundation/qsp-docs/tree/main/',
+          remarkPlugins: [remarkBreaks],
         },
         theme: {
           customCss: './src/css/custom.css',
