@@ -39,7 +39,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/QSPFoundation/qsp-docs/tree/main/',
+            'https://github.com/QSPFoundation/qsp-docs/edit/main/',
           remarkPlugins: [remarkBreaks],
         },
         blog: {
@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/QSPFoundation/qsp-docs/tree/main/',
+            'https://github.com/QSPFoundation/qsp-docs/edit/main/',
           remarkPlugins: [remarkBreaks],
         },
         theme: {
