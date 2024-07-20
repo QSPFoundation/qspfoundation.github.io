@@ -1,5 +1,6 @@
 ---
-author:
+authors:
+  - byte
   - fering
 ---
 
