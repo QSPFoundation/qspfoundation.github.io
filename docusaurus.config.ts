@@ -12,12 +12,12 @@ const config: Config = {
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/qsp-docs',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'QSPFoundation', // Usually your GitHub org/user name.
-  projectName: 'qsp-docs', // Usually your repo name.
+  projectName: 'qspfoundation.github.io', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -39,7 +39,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/QSPFoundation/qsp-docs/edit/main/',
+            'https://github.com/QSPFoundation/qspfoundation.github.io/edit/main/',
           remarkPlugins: [remarkBreaks],
         },
         blog: {
@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/QSPFoundation/qsp-docs/edit/main/',
+            'https://github.com/QSPFoundation/qspfoundation.github.io/edit/main/',
           remarkPlugins: [remarkBreaks],
         },
         theme: {
@@ -75,7 +75,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/QSPFoundation/qsp-docs',
+          href: 'https://github.com/QSPFoundation/qspfoundation.github.io',
           label: 'GitHub',
           position: 'right',
         },
