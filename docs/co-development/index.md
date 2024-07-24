@@ -73,52 +73,79 @@
   git push
   ```
 
-* Теперь один из нас делает pull request из этой ветки через GitHub. Там довольно хитро и надо показывать
-* После чего pull request одобряем (при условии, что всё там хорошо задеплоилось (это определено в `.github/workflows/test-deploy.yml`))
+* Создать pull request из этой ветки через GitHub:
 
-  Одобрять, т.е. слить с веткой `main`, можно тремя способами:
+  * Перейти на страницу создания одним из двумя способов:
+    * Через главную страницу хранилища:
 
-  * `squash` — т.е. все коммиты с твоей ветки соединяются в один коммит
+      ![create-pull-request](./create-pull-request.png)
 
-    Это надо, чтобы вот этот поток бессознательного:
+    * Через ветки
+      * Нажать на [branches](https://github.com/QSPFoundation/qspfoundation.github.io/branches)
 
-    ```text
-    wip: мне было лень давать название
-    wip: наконец-то дописал статью!
-    ```
+        ![branches](./branches.png)
+      * Выбрать интересующую ветку, нажать на `...` и выпадающем меню выбрать "New Pull Request"
 
-    Превратить в один осмысленный:
+        ![select-and-pull-request.png](./select-and-pull-request.png)
+  * Осмысленно назвать pull request в поле "Add a title"
+
+    Под осмысленным названием подразумевается что-то в духе:
 
     ```bash
-    docs: write syntax highlighting article
+    docs: write the syntax highlighting article
     ```
 
-  * `rebase` — эта штука сливает новые коммиты в `main`
+    В хранилище используется [распространенное соглашение об именовании коммитов](https://www.conventionalcommits.org/en/v1.0.0/).
 
-    Если у тебя осмысленные коммиты, в духе:
+* Как только pull request создастся, запустятся тесты (они определены в `.github/workflows/test-deploy.yml`. Они проверят, всё ли у в порядке с Вашими изменениями
 
-    ```text
-    docs(syntax-highlighting): start writing an article
-    docs(syntax-highlighting): write shortly description of what syntax highlighting is
-    ...
-    ```
+* Сообщите в ИФню, пускай Ваш Pull Request кто-нибудь одобрит, и ждите
 
-    Тогда это всё не стыдно кинуть прямо в `main` в таком виде.
+Как только Ваш Pull Request одобрят, Ваша ветка сольется с веткой `main`, автоматически запустится развертывание проекта (это настраивается в `.github/workflows\deploy.yml`), и через какое-то время можно будет увидеть изменения на сайте документации.
 
-  * еще что-то, что сливает ветку через коммит. Забыл, как называется
+После слияния ветки, она становится ненужна, и ее нужно удалить, чтобы не мешалась:
 
-  Как только ветка сливается с `main`, автоматически запускается развертывание проекта (это настраивается в `.github/workflows\deploy.yml`), и через какое-то время можно будет увидеть изменения на сайте документации.
-
-* Удалить ветку:
-
-  Удалить ветку с GitHub'а:
+* Удалить ветку с GitHub'а:
 
   ```bash
   git push -d origin syntax-highlighting
   ```
 
-  Удалить ветку у себя на компьютере:
+* Удалить ветку у себя на компьютере:
 
   ```bash
   git branch -d syntax-highlighting
   ```
+
+## Одобрение Pull Request
+
+Если у Вас есть права, то одобрить Pull Request можно тремя способами:
+
+* `squash` — т.е. все коммиты с твоей ветки соединяются в один коммит
+
+  Это надо, чтобы вот этот поток бессознательного:
+
+  ```text
+  wip: мне было лень давать название
+  wip: наконец-то дописал статью!
+  ```
+
+  Превратить в один осмысленный:
+
+  ```bash
+  docs: write syntax highlighting article
+  ```
+
+* `rebase` — эта штука сливает новые коммиты в `main`
+
+  Если у тебя осмысленные коммиты, в духе:
+
+  ```text
+  docs(syntax-highlighting): start writing an article
+  docs(syntax-highlighting): write shortly description of what syntax highlighting is
+  ...
+  ```
+
+  Тогда это всё не стыдно кинуть прямо в `main` в таком виде.
+
+* еще что-то, что сливает ветку через коммит. Забыл, как называется
