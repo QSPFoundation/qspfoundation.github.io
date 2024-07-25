@@ -98,3 +98,42 @@ flowchart TD
 
 * каталог QSP
 * на GitHub Pages с помощью QSpider Standalone
+
+Теперь игрок может:
+
+* Скачать игру с [каталога на QSP](https://qsp.org/index.php?option=com_sobi2&Itemid=55) и воспроизвести ее в плеерах
+* Запустить игру с [QSpider](https://dev.qsp.org/qspider)
+
+  Там можно либо:
+
+  * открыть со своего устройства .qsp файл
+  * добавить игру с библиотеки и запустить
+  * запустить игру по прямой ссылке
+
+    * Игру с каталога
+
+      Если знать ID игры (к примеру, 285 — "Баллада о Герое"), то можно ее запустить так:
+
+      ```text
+      https://qspfoundation.github.io/qspider/?catalogId=285
+      ```
+
+    * С отдельного источника
+
+      К примеру, есть игра "Баллада о Герое", которая лежит по следующей ссылке:
+
+      ```text
+      https://aleksversus.github.io/QSP-storage/game/heroballad/heroballad.qsp
+      ```
+
+      Эту ссылку можно загнать в QSpider:
+
+      ```text
+      https://qspfoundation.github.io/qspider/?config=https://aleksversus.github.io/QSP-storage/game/heroballad/heroballad.qsp
+      ```
+
+      И [пройти по ней](https://qspfoundation.github.io/qspider/?config=https://aleksversus.github.io/QSP-storage/game/heroballad/heroballad.qsp)
+
+* Зайти по ссылке на GitHub, itch.io и т.п. и просто начать играть
+
+Самый лучший вариант, как облегчить жизнь разработчику игры и игроку, — залить игру на сайт и дать игроку прямую ссылку на игру. Так можно избежать +100500 проблем.
