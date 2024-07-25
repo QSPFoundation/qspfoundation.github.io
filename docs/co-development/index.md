@@ -103,7 +103,7 @@
 
 Как только ваш Pull Request одобрят, ваша ветка сольется с веткой `main`, автоматически запустится развертывание проекта (это настраивается в `.github/workflows\deploy.yml`), и через какое-то время можно будет увидеть изменения на сайте документации.
 
-После слияния ветки, она становится ненужна, и ее нужно удалить, чтобы не мешалась:
+После слияния ветки она становится не нужна и ее нужно удалить, чтобы не мешалась:
 
 * Удалить ветку с GitHub'а:
 
@@ -115,6 +115,12 @@
 
   ```bash
   git branch -d syntax-highlighting
+  ```
+
+* Удаление всех локальных веток, которых уже нет на GitHub:
+
+  ```bash
+  git fetch -p && git branch -vv | awk '/: \w+]/{print $1}' | xargs git branch -d --force
   ```
 
 ## Одобрение Pull Request
@@ -142,7 +148,7 @@
 
   ```text
   docs(syntax-highlighting): start writing an article
-  docs(syntax-highlighting): write shortly description of what syntax highlighting is
+  docs(syntax-highlighting): write short description of what syntax highlighting is
   ...
   ```
 
