@@ -89,7 +89,6 @@ flowchart TD
 
   Скорее всего, связаны друг с другом:
 
-  * `PStmts` — какое-то непонятное хацканье
   * `SingleQuotNestedCount`
   * `DoubleQuotNestedCount`
   * `HtmlAttDoubleNested`
