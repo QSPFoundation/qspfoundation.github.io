@@ -27,4 +27,53 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Custom highlighting of qsp-code */
+  --qsp-scope-user-variable: #e0e0e0;
+  --qsp-scope-sys-variable: rgb(255,184,107);
+  --qsp-scope-number: rgb(80,250,123);
+  --qsp-scope-operator: rgb(127,233,231);
+  /* --qsp-scope-o: rgb(241,250,140); */
+  --qsp-scope-start-location: rgb(255,121,198);
+  --qsp-scope-end-location: rgb(139,233,253);
+}
+
+[data-theme='light'] {
+  /* --qsp-scope-user-variable: #e0e0e0; */
+  --qsp-scope-sys-variable: rgb(167,29,93);
+  --qsp-scope-builtin: rgb(98,163,92);
+  /* --qsp-scope-operator: rgb(127,233,231); */
+  /* --qsp-scope-o: rgb(241,250,140); */
+  --qsp-scope-start-location: rgb(121,93,163);
+  --qsp-scope-end-location: rgb(121,93,163);
+}
+
+/* Custom highlighting of qsp-code */
+.language-qsp .token.sys-variable {
+  color: var(--qsp-scope-sys-variable);
+}
+
+.language-qsp .token.user-variable {
+  color: var(--qsp-scope-user-variable);
+}
+
+.language-qsp .token.builtin {
+  color: var(--qsp-scope-builtin);
+}
+
+.language-qsp .token.number {
+  color: var(--qsp-scope-number);
+}
+
+.language-qsp .token.operator {
+  color: var(--qsp-scope-operator);
+}
+
+.language-qsp .token.start-location {
+  color: var(--qsp-scope-start-location);
+  font-weight: bold;
+}
+.language-qsp .token.end-location {
+  color: var(--qsp-scope-end-location);
+  font-weight: bold;
 }
