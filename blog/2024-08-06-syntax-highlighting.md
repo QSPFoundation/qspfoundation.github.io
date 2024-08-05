@@ -86,7 +86,7 @@ LineEndings при использовании подсветки в markdown-ф�
   npm run swizzle @docusaurus/theme-classic prism-include-languages
   ```
   При этом будет создан файл "`src/theme/prism-include-languages.ts`" (или `.js`).
-2. В папке "`src/theme"` создайте папку `qsp-syntax` и скопируйте в неё файл "`prism-qsp.js`", например, [отсюда](). <!-- TODO: не забыть добавить ссылку -->
+2. В папке "`src/theme"` создайте папку `qsp-syntax` и скопируйте в неё файл "`prism-qsp.js`", например, [отсюда](https://github.com/AleksVersus/howdo_faq/tree/docusaurus/src/theme). <!-- TODO: не забыть добавить ссылку -->
 3. В файле "`src/theme/prism-include-languages.ts`" отредактируйте функцию `prismIncludeLanguages`:
   ```ts
   export default function prismIncludeLanguages(PrismObject: typeof PrismNamespace,): void {
