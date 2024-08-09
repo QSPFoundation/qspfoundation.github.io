@@ -82,23 +82,46 @@ LineEndings при использовании подсветки в markdown-ф�
 
 Установка подсветки в ваш Docusaurus весьма проста:
 1. Используйте swizzle для того, чтобы добавить неподдерживаемые языки, введя команду в терминале:
-  ```bash
-  npm run swizzle @docusaurus/theme-classic prism-include-languages
-  ```
-  При этом будет создан файл "`src/theme/prism-include-languages.ts`" (или `.js`).
-2. В папке "`src/theme"` создайте папку `qsp-syntax` и скопируйте в неё файл "`prism-qsp.js`", например, [отсюда](https://github.com/AleksVersus/howdo_faq/tree/docusaurus/src/theme). <!-- TODO: не забыть добавить ссылку -->
+    ```bash
+    npm run swizzle @docusaurus/theme-classic prism-include-languages
+    ```
+    При этом будет создан файл "`src/theme/prism-include-languages.ts`" (или `.js`).
+2. В папке "`src/theme"` создайте папку `qsp-syntax` и скопируйте в неё файл "`prism-qsp.js`", например, [отсюда](https://github.com/AleksVersus/howdo_faq/tree/docusaurus/src/theme). <!-- TODO: сейчас здесь установлена заглушка, ссылающаяся на мой справочник. Ссылка будет в скором времени нерабочей. Лучше изменить на актуальную после слияния веток -->
 3. В файле "`src/theme/prism-include-languages.ts`" отредактируйте функцию `prismIncludeLanguages`:
-  ```ts
-  export default function prismIncludeLanguages(PrismObject: typeof PrismNamespace,): void {
-    // ...
-    additionalLanguages.forEach((lang) => {
+    ```ts
+    export default function prismIncludeLanguages(PrismObject: typeof PrismNamespace,): void {
       // ...
-      require(`prismjs/components/prism-${lang}`);
-    });
-    require('./qsp-syntax/prism-qsp.js');
-    // ..
-  }
-  ```
+      additionalLanguages.forEach((lang) => {
+        // ...
+        require(`prismjs/components/prism-${lang}`);
+      });
+      // highlight-next-line
+      require('./qsp-syntax/prism-qsp.js');
+      // ...
+    }
+    ```
+4. Далее вы можете создать собственный файл стилей, положить его рядом с `common.css` и прописать путь в `docusaurus.config.ts`:
+    ```ts
+    presets: [
+    [
+      'classic',
+      {
+        docs: {
+          // ...
+        },
+        blog: {
+          // ...
+        },
+        theme: {
+          customCss: [
+            './src/css/custom.css',
+            // highlight-next-line
+            './src/css/qsp-syntax.css'
+          ]
+        },
+        // ...
+    ```
+    Или вы можете скачать готовую цветовую схему [отсюда](https://github.com/AleksVersus/howdo_faq/blob/docusaurus/src/css/qsp-syntax.css)<!-- TODO: сейчас здесь установлена заглушка, ссылающаяся на мой справочник. Ссылка будет в скором времени нерабочей. Лучше изменить на актуальную после слияния веток -->, и разместить её точно так же.
 
 После сохранения и перезапуска сервера, или при сборке проекта, подсветка QSP-кода подхватится.
 
@@ -106,4 +129,4 @@ LineEndings при использовании подсветки в markdown-ф�
 
 :::tip
 Параллельно была написана подсветка для Obsidian: **[qsp-syntax-obsidian](https://github.com/AleksVersus/qsp-syntax-obsidian)**.
-::
+:::
