@@ -33,7 +33,7 @@ Prism.languages.qsp = {
 	},
 	'start-location': /^\#\s*\S+.*$/im,
 	'end-location': /^\-.*$/im,
-	'label': /^\s*\:.*?(?=\&|$)/im,
+	'label': /^\s*\:.+?(?=\&|$)/im,
 	'sys-variable': RegExp(`(?:${system_vars_string}|${system_vars_num})`, 'i'),
 	'builtin': RegExp(`(?:(${functions_string}|${functions_num}))`, 'i'),
 	'number': /\b\d+\b/,
