@@ -51,7 +51,10 @@ const config: Config = {
           remarkPlugins: [remarkBreaks],
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/qsp-syntax.css'
+          ]
         },
       } satisfies Preset.Options,
     ],
