@@ -10,17 +10,21 @@ let system_vars_string = '\\$(counter|ongload|ongsave|onnewloc|onactsel|onobjsel
 let system_vars_num = '\\b(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|args|result)\\b'
 
 Prism.languages.qsp = {
+	'comment': {
+		pattern: /((^\s*?)|(\&\s*?))(![^\n{'"]*$)/m,
+		lookbehind: true,
+		greedy: true,
+	},
 	'braced-comment': {
-		pattern: /((^\s*?)|(\&\s*?))(![^\{]*\{[^\}]*\}.*?$)/m,
+		pattern: /((^\s*?)|(\&\s*?))(![^\n{'"]*\{[^\}]*\}.*?$)/m,
 		alias: 'comment',
+		lookbehind: true,
+		greedy: true,
 	},
 	'quoted-comment': {
-		pattern: /((^\s*?)|(\&\s*?))((![^"\n\r]*"[^"]*".*?$)|(![^'\n\r]*'[^']*?'.*?$))/m,
+		pattern: /((^\s*?)|(\&\s*?))((![^\n{'"]*"[^"]*".*?$)|(![^'\n\r]*'[^']*?'.*?$))/m,
 		alias: 'comment',
-	},
-	'comment': {
-		pattern: /((^\s*?)|(\&\s*?))(!.*$)/m,
-		lookbehind: false,
+		lookbehind: true,
 		greedy: true,
 	},
 	'string': {
@@ -29,16 +33,20 @@ Prism.languages.qsp = {
 		greedy: true
 	},
 	'function': {
-		pattern: /\@[\w\.\#а-я]+(?=\s*\()/i,
+		pattern: /\@[\w\.а-я]+(?=\s*\()/i,
 	},
 	'start-location': /^\#\s*\S+.*$/im,
 	'end-location': /^\-.*$/im,
-	'label': /^\s*\:.+?(?=\&|$)/im,
+	'label': {
+		pattern: /^\s*:[^&\n]*(?=\&|$)/im,
+		lookbehind: true,
+		greedy: true,
+	},
 	'sys-variable': RegExp(`(?:${system_vars_string}|${system_vars_num})`, 'i'),
 	'builtin': RegExp(`(?:(${functions_string}|${functions_num}))`, 'i'),
 	'number': /\b\d+\b/,
 	'keyword': RegExp(`(?:${kw_text_operators}|${kw_operators}|${kw_controls})`, 'i'),
-	'declarator': /(?:\b(local|set|let)\b)/,
+	'declarator': /(?:\b(local|set|let)\b)/i,
 	'operator': /[<>\+\-\*\/]=|<>|\+|\&|-|<|>|=|\/|\*|!|\b(and|or|mod|no)\b/i,
 	'sign-punctuation': /[{}[\];(),:]/,
 	'user-variable': /[\$\%][\wа-я]+|[\wа-я]+/i,
