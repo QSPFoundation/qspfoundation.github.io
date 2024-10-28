@@ -69,6 +69,7 @@ sidebar_position: 6
 - [`COUNTOBJ`](qsp-keyword-functions.md#countobj)
 - [`$CURACTS`](qsp-keyword-functions.md#curacts)
 - [`$CURLOC`](qsp-keyword-functions.md#curloc)
+- [`$CUROBJS`](qsp-keyword-functions.md#curobjs)
 - [`DEBUG`](qsp-keyword-sys-var.md#debug)
 - [`DELACT`](qsp-keyword-operators.md#delact)
 - ~~[`DELLIB`](qsp-keyword-operators.md#freelib)~~
@@ -147,6 +148,7 @@ sidebar_position: 6
 - [`RGB`](qsp-keyword-functions.md#rgb)
 - [`RND`](qsp-keyword-functions.md#rnd)
 - [`SAVEGAME`](qsp-keyword-operators.md#savegame)
+- [`SCANSTR`](qsp-keyword-operators.md#scanstr)
 - [`$SELACT`](qsp-keyword-functions.md#selact)
 - [`$SELOBJ`](qsp-keyword-functions.md#selobj)
 - [`SET`](qsp-keyword-operators.md#set)
@@ -155,6 +157,7 @@ sidebar_position: 6
 - [`SHOWINPUT`](qsp-keyword-operators.md#showinput)
 - [`SHOWOBJS`](qsp-keyword-operators.md#showobjs)
 - [`SHOWSTAT`](qsp-keyword-operators.md#showstat)
+- [`SORTARR`](qsp-keyword-operators.md#sortarr)
 - [`$STATTXT`](qsp-keyword-functions.md#stattxt)
 - [`$STR`](qsp-keyword-functions.md#str)
 - [`STRCOMP`](qsp-keyword-functions.md#strcomp)
