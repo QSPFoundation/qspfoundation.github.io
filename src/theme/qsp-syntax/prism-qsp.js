@@ -1,5 +1,5 @@
 
-let kw_operators = '\\b(inclib|freelib|addqst|killqst|openqst|opengame|savegame|addobj|delobj|killobj|unsel|unselect|cls|cla|delact|cmdclr|cmdclear|play|close|all|jump|dynamic|goto|gt|xgoto|xgt|gosub|gs|menu|exit|showobjs|showstat|showacts|showinput|refint|copyarr|killvar|killall|view|msg|settimer|wait|exec)\\b'
+let kw_operators = '\\b(act|addobj|cla|close|all|cls|cmdclear|copyarr|delact|delobj|dynamic|exit|gosub|goto|if|else|elseif|inclib|jump|killall|killobj|freelib|killvar|let|local|loop|menu|msg|opengame|openqst|play|refint|savegame|scanstr|set|settimer|showacts|showinput|showobjs|showstat|sortarr|unselect|view|wait|xgoto|addqst|killqst|unsel|cmdclr|gt|xgt|gs|exec)\\b'
 let kw_controls = '\\b(act|if|elseif|else|loop|while|step|end)\\b'
 let kw_text_operators = '\\*?\\b(pl?|nl|clr|clear)\\b'
 
@@ -11,18 +11,18 @@ let system_vars_num = '\\b(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|
 
 Prism.languages.qsp = {
 	'comment': {
-		pattern: /((^\s*?)|(\&\s*?))(![^\n{'"]*$)/m,
+		pattern: /((^\s*?)|(\&\s*?)|(\:\s*?))(![^\n{'"]*$)/m,
 		lookbehind: true,
 		greedy: true,
 	},
 	'braced-comment': {
-		pattern: /((^\s*?)|(\&\s*?))(![^\n{'"]*\{[^\}]*\}.*?$)/m,
+		pattern: /((^\s*?)|(\&\s*?)|(\:\s*?))(![^\n{'"]*\{[^\}]*\}.*?$)/m,
 		alias: 'comment',
 		lookbehind: true,
 		greedy: true,
 	},
 	'quoted-comment': {
-		pattern: /((^\s*?)|(\&\s*?))((![^\n{'"]*"[^"]*".*?$)|(![^'\n\r]*'[^']*?'.*?$))/m,
+		pattern: /((^\s*?)|(\&\s*?)|(\:\s*?))((![^\n{'"]*"[^"]*".*?$)|(![^'\n\r]*'[^']*?'.*?$))/m,
 		alias: 'comment',
 		lookbehind: true,
 		greedy: true,
