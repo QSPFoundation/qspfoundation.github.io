@@ -3,7 +3,7 @@ let kw_operators = '\\b(act|addobj|cla|close|all|cls|cmdclear|copyarr|delact|del
 let kw_controls = '\\b(act|if|elseif|else|loop|while|step|end)\\b'
 let kw_text_operators = '\\*?\\b(pl?|nl|clr|clear)\\b'
 
-let functions_string = '\\$(desc|user_text|usrtxt|maintxt|stattxt|curloc|selobj|selact|mid|(u|l)case|trim|replace|str|strfind|input|qspver|curacts|getobj|iif|dyneval|func|max|min|arritem)\\b'
+let functions_string = '\\$(desc|user_text|usrtxt|maintxt|stattxt|curloc|selobj|selact|mid|(u|l)case|trim|replace|str|strfind|input|qspver|curacts|curobjs|getobj|iif|dyneval|func|max|min|arritem)\\b'
 let functions_num = '\\b(loc|obj|isnum|isplay|len|val|instr|strcomp|strpos|arrsize|arrpos|arrcomp|msecscount|rgb|countobj|ra?nd|iif|dyneval|func|max|min|arritem)\\b'
 
 let system_vars_string = '\\$(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)\\b'
