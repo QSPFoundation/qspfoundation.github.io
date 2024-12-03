@@ -20,9 +20,9 @@ sidebar_position: 6
 - [`{}` (Фигурные скобки)](qsp-keyword-syntaxems.md#фигурные-скобки-)
 - [`()` (круглые скобки)](qsp-keyword-syntaxems.md#круглые-скобки-)
 - [`[]` (квадратные скобки)](qsp-keyword-syntaxems.md#квадратные-скобки-)
-- [`@` (коммерческое "эт")](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D1%8D%D1%82-)
+- [`@` (коммерческое "эт")](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D1%8D%D1%82-) - 5.8.0
 - [`$` (знак доллара)](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%B7%D0%BD%D0%B0%D0%BA-%D0%B4%D0%BE%D0%BB%D0%BB%D0%B0%D1%80%D0%B0-)
-- [`%` (знак процента)](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%B7%D0%BD%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%BD%D1%82%D0%B0-)
+- [`%` (знак процента)](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%B7%D0%BD%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%BD%D1%82%D0%B0-) - 5.9.0
 - [`*`](qsp-keyword-operacion.md#-умножение)
 - [`*=`](qsp-keyword-operacion.md#-умножение-присвоение)
 - [`+`](qsp-keyword-operacion.md#-сложение)
@@ -49,8 +49,10 @@ sidebar_position: 6
 - [`AND`](qsp-keyword-operacion.md#and)
 - [`ARGS`](qsp-keyword-sys-var.md#args)
 - [`ARRCOMP`](qsp-keyword-functions.md#arrcomp)
-- [`ARRITEM`](qsp-keyword-functions.md#arritem)
+- [`ARRITEM`](qsp-keyword-functions.md#arritem) - 5.8.0
+- [`ARRPACK`](qsp-keyword-functions.md#arrpack) - 5.9.1
 - [`ARRPOS`](qsp-keyword-functions.md#arrpos)
+- [`ARRTYPE`](qsp-keyword-functions.md#arrtype) - 5.9.1
 - [`ARRSIZE`](qsp-keyword-functions.md#arrsize)
 - [`$BACKIMAGE`](qsp-keyword-sys-var.md#backimage)
 - [`BCOLOR`](qsp-keyword-sys-var.md#bcolor)
@@ -69,7 +71,7 @@ sidebar_position: 6
 - [`COUNTOBJ`](qsp-keyword-functions.md#countobj)
 - [`$CURACTS`](qsp-keyword-functions.md#curacts)
 - [`$CURLOC`](qsp-keyword-functions.md#curloc)
-- [`$CUROBJS`](qsp-keyword-functions.md#curobjs)
+- [`$CUROBJS`](qsp-keyword-functions.md#curobjs) - 5.9.0
 - [`DEBUG`](qsp-keyword-sys-var.md#debug)
 - [`DELACT`](qsp-keyword-operators.md#delact)
 - ~~[`DELLIB`](qsp-keyword-operators.md#freelib)~~
@@ -85,7 +87,7 @@ sidebar_position: 6
 - [`EXIT`](qsp-keyword-operators.md#exit)
 - [`FCOLOR`](qsp-keyword-sys-var.md#fcolor)
 - [`$FNAME`](qsp-keyword-sys-var.md#fname)
-- [`FREELIB`](qsp-keyword-operators.md#freelib)
+- [`FREELIB`](qsp-keyword-operators.md#freelib) - 5.8.0
 - [`FSIZE`](qsp-keyword-sys-var.md#fsize)
 - [`FUNC`](qsp-keyword-functions.md#func)
 - [`$GETOBJ`](qsp-keyword-functions.md#getobj)
@@ -95,7 +97,7 @@ sidebar_position: 6
 - [`GT`](qsp-keyword-operators.md#goto)
 - [`IF`](qsp-keyword-operators.md#if)
 - [`IIF`](qsp-keyword-functions.md#iif)
-- [`INCLIB`](qsp-keyword-operators.md#inclib)
+- [`INCLIB`](qsp-keyword-operators.md#inclib) - 5.8.0
 - [`$INPUT`](qsp-keyword-functions.md#input)
 - [`INSTR`](qsp-keyword-functions.md#instr)
 - [`ISNUM`](qsp-keyword-functions.md#isnum)
@@ -110,8 +112,8 @@ sidebar_position: 6
 - [`LEN`](qsp-keyword-functions.md#len)
 - [`LET`](qsp-keyword-operators.md#let)
 - [`LOC`](qsp-keyword-operacion.md#loc)
-- [`LOCAL`](qsp-keyword-operators.md#local)
-- [`LOOP`](qsp-keyword-operators.md#loop)
+- [`LOCAL`](qsp-keyword-operators.md#local) - 5.8.0
+- [`LOOP`](qsp-keyword-operators.md#loop) - 5.8.0
 - [`$MAINTXT`](qsp-keyword-functions.md#maintxt)
 - [`MAX`](qsp-keyword-functions.md#max)
 - [`MENU`](qsp-keyword-operators.md#menu)
@@ -148,16 +150,17 @@ sidebar_position: 6
 - [`RGB`](qsp-keyword-functions.md#rgb)
 - [`RND`](qsp-keyword-functions.md#rnd)
 - [`SAVEGAME`](qsp-keyword-operators.md#savegame)
-- [`SCANSTR`](qsp-keyword-operators.md#scanstr)
+- [`SCANSTR`](qsp-keyword-operators.md#scanstr) - 5.9.0
 - [`$SELACT`](qsp-keyword-functions.md#selact)
 - [`$SELOBJ`](qsp-keyword-functions.md#selobj)
 - [`SET`](qsp-keyword-operators.md#set)
 - [`SETTIMER`](qsp-keyword-operators.md#settimer)
+- [`SETVAR`](qsp-keyword-operators.md#setvar) - 5.9.1
 - [`SHOWACTS`](qsp-keyword-operators.md#showacts)
 - [`SHOWINPUT`](qsp-keyword-operators.md#showinput)
 - [`SHOWOBJS`](qsp-keyword-operators.md#showobjs)
 - [`SHOWSTAT`](qsp-keyword-operators.md#showstat)
-- [`SORTARR`](qsp-keyword-operators.md#sortarr)
+- [`SORTARR`](qsp-keyword-operators.md#sortarr) - 5.9.0
 - [`$STATTXT`](qsp-keyword-functions.md#stattxt)
 - [`$STR`](qsp-keyword-functions.md#str)
 - [`STRCOMP`](qsp-keyword-functions.md#strcomp)
@@ -165,6 +168,7 @@ sidebar_position: 6
 - [`STRPOS`](qsp-keyword-functions.md#strpos)
 - [`$TRIM`](qsp-keyword-functions.md#trim)
 - [`$UCASE`](qsp-keyword-functions.md#ucase)
+- [`UNPACKARR`](qsp-keyword-operators.md#unpackarr) - 5.9.1
 - [`UNSEL`](qsp-keyword-operators.md#unselect)
 - [`UNSELECT`](qsp-keyword-operators.md#unselect)
 - [`USEHTML`](qsp-keyword-sys-var.md#usehtml)
