@@ -1,7 +1,8 @@
 ---
 id: language
-title: Язык QSP
+title: Language
 sidebar_position: 1
 ---
 
-# Язык QSP
+
+# QSP Language

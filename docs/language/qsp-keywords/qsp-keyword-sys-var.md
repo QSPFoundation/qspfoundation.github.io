@@ -1,4 +1,6 @@
 ---
+id: qsp-keyword-sys-var
+title: Системные переменные
 sidebar_position: 4
 ---
 
