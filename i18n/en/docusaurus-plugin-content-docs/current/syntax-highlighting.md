@@ -22,7 +22,7 @@ VS Code has two highlighting methods:
 
 * TextMate format
   * `glife/tools/syntax/VSCode/qsrc/syntaxes/QSP.tmLanguage.json`
-  * [LangQSP by someone called Xorgroth](https://gitlab.com/kevinsmartstfg/girl-life/-/raw/master/tools/syntax/VSCode/qsrc/syntaxes/QSP.tmLanguage.json)
+  * [TextMate format by someone called Xorgroth](https://gitlab.com/kevinsmartstfg/girl-life/-/raw/master/tools/syntax/VSCode/qsrc/syntaxes/QSP.tmLanguage.json)
 
 * Semantic highlighting
   * Combination of `Qsp.FSharp.Parser`, `Qsp.FSharp.ServerLanguage` and `Qsp.FSharp.VsCode`
