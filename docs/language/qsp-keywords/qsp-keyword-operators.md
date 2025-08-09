@@ -1,6 +1,5 @@
 ---
 id: qsp-keyword-operators
-title: Операторы
 sidebar_position: 2
 ---
 

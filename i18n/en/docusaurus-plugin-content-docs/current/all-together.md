@@ -1,6 +1,5 @@
 ---
 id: all-together
-title: All Together
 ---
 
 ﻿# All Together

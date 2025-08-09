@@ -1,6 +1,5 @@
 ---
 id: qsp-fsharp-parser
-title: QSP Fsharp Parser
 ---
 
 ﻿# Qsp.FSharp.Parser

@@ -1,6 +1,5 @@
 ---
 id: qsp-keyword-syntaxems
-title: Синтаксемы и спецсимволы
 sidebar_position: 5
 ---
 

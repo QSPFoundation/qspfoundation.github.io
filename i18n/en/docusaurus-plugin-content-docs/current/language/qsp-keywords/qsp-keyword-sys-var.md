@@ -1,6 +1,5 @@
 ---
 id: qsp-keyword-sys-var
-title: System Variables
 sidebar_position: 4
 ---
 

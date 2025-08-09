@@ -1,6 +1,5 @@
 ---
 id: qsplib-parser
-title: QSPlib Parser
 ---
 
 ﻿# QSPLib Parser

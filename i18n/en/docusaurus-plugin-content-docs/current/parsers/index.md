@@ -1,6 +1,5 @@
 ---
 id: parsers
-title: Parsers
 ---
 
 ﻿# Parsers

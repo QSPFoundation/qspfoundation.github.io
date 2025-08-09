@@ -1,6 +1,5 @@
 ---
 id: qsp-keyword-functions
-title: Functions
 sidebar_position: 3
 ---
 
@@ -213,7 +212,7 @@ $name_loc = "summ"
 *pl func($name_loc, 23) & ! will output 276 to screen
 ```
 
-Also see ["Implicit `FUNC` function call"](qsp-keyword-syntaxems.md#at-symbol-).
+Also see ["Implicit `FUNC` function call"](qsp-keyword-syntaxems#commercial-at-symbol-).
 
 ## `$GETOBJ`
 

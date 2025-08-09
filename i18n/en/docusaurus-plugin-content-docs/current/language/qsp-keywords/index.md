@@ -1,13 +1,13 @@
 ---
 id: qsp-keywords
-title: Reserved Words, System Variables, Special Symbols
+title: Reserved Words, System Variables, Special Characters
 sidebar_position: 6
 ---
 
 # Index
 
 :::warning[Attention!]
-Crossed-out commands do not work in players version 5.8.0 and higher.
+Crossed out commands do not work in players version 5.8.0 and above.
 :::
 
 - [Implicit operator](qsp-keyword-operators#implicit-operator)
@@ -19,12 +19,12 @@ Crossed-out commands do not work in players version 5.8.0 and higher.
 - [`,` (argument separator)](qsp-keyword-syntaxems.md#comma-)
 - [`""` (quotes)](qsp-keyword-syntaxems.md#quote-)
 - [`''` (apostrophes)](qsp-keyword-syntaxems.md#apostrophe-)
-- [`{}` (Curly brackets)](qsp-keyword-syntaxems.md#curly-brackets-)
+- [`{}` (Curly braces)](qsp-keyword-syntaxems.md#curly-braces-)
 - [`()` (round brackets)](qsp-keyword-syntaxems.md#round-brackets-)
 - [`[]` (square brackets)](qsp-keyword-syntaxems.md#square-brackets-)
-- [`@` (commercial "at")](qsp-keyword-syntaxems#at-symbol-) - 5.8.0
-- [`$` (dollar sign)](qsp-keyword-syntaxems#dollar-sign-)
-- [`%` (percent sign)](qsp-keyword-syntaxems#percent-sign-) - 5.9.0
+- [`@` (commercial "at")](qsp-keyword-syntaxems#commercial-at-symbol-) - 5.8.0
+- [`$` (dollar sign)](qsp-keyword-syntaxems#dollar-sign-symbol-)
+- [`%` (percent sign)](qsp-keyword-syntaxems#percent-sign-symbol-) - 5.9.0
 - [`*`](qsp-keyword-operacion.md#-multiplication)
 - [`*=`](qsp-keyword-operacion.md#-multiplication-assignment)
 - [`+`](qsp-keyword-operacion.md#-addition)

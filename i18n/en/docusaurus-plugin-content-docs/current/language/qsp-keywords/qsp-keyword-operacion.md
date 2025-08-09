@@ -1,6 +1,5 @@
 ---
 id: qsp-keyword-operacion
-title: Operations
 sidebar_position: 1
 ---
 

@@ -1,6 +1,5 @@
 ---
 id: qsp-keyword-functions
-title: Функции
 sidebar_position: 3
 ---
 

@@ -1,6 +1,5 @@
 ---
 id: language
-title: Язык QSP
 sidebar_position: 1
 ---
 

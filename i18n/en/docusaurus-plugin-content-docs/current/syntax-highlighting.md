@@ -1,6 +1,5 @@
 ---
 id: syntax-highlighting
-title: Syntax Highlighting
 ---
 
 # Syntax Highlighting
