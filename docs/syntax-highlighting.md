@@ -1,6 +1,3 @@
----
-id: syntax-highlighting
----
 
 # Подсветка синтаксиса
 

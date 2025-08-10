@@ -1,8 +1,6 @@
----
-id: qsp-fsharp-parser
----
 
-﻿# Qsp.FSharp.Parser
+
+# Qsp.FSharp.Parser
 
 [Qsp.FSharp.Parser](https://github.com/QSPFoundation/Qsp.FSharp/tree/master/src/Qsp.FSharp.Core) разрабатывается для сред разработки, которые поддерживают LSP (к примеру, VS Code, для [расширения](https://github.com/QSPFoundation/Qsp.FSharp.VsCode) которого всё это и затевалось).
 

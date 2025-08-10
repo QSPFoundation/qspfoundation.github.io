@@ -1,8 +1,6 @@
----
-id: qsplib-parser
----
 
-﻿# QSPLib Parser
+
+# QSPLib Parser
 
 [QSPLib](https://github.com/QSPFoundation/qsp/tree/master/qsp) парсил исходники ещё задолго до того, как это стало модным, и продолжает этим заниматься и по сей день.
 

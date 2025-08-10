@@ -1,5 +1,4 @@
 ---
-id: qsp-keyword-syntaxems
 sidebar_position: 5
 ---
 

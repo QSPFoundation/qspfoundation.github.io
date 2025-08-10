@@ -1,5 +1,4 @@
 ---
-id: qsp-keywords
 title: Reserved Words, System Variables, Special Characters
 sidebar_position: 6
 ---

@@ -1,5 +1,4 @@
 ---
-id: qsp-keyword-functions
 sidebar_position: 3
 ---
 

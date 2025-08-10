@@ -1,6 +1,4 @@
----
-id: co-development
----
+
 
 # Collaborative Development
 

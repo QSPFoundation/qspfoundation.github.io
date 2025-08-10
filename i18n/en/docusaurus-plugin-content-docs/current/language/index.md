@@ -1,5 +1,4 @@
 ---
-id: language
 sidebar_position: 1
 ---
 

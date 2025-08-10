@@ -1,8 +1,6 @@
----
-id: all-together
----
 
-﻿# All Together
+
+# All Together
 
 This section briefly outlines various thorny paths from starting QSP game development (using various tools and instruments) to implementing and launching the game for the end player.
 

@@ -1,6 +1,4 @@
 ---
-id: intro
-title: QSP Foundation
 sidebar_position: 1
 ---
 

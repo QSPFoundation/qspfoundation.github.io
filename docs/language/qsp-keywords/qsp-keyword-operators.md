@@ -1,5 +1,4 @@
 ---
-id: qsp-keyword-operators
 sidebar_position: 2
 ---
 
