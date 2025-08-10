@@ -1,3 +1,4 @@
+
 # Подсветка синтаксиса
 
 Подсветка синтаксиса в редакторах и в прочих окружениях достигается довольно специфическими средствами, для которых, к сожалению, нет общего решения. А раз нет общего решения, то появляются трудности с сопровождением кода для каждого отдельного решения.
@@ -15,9 +16,9 @@ VS Code есть два способа подсветки:
 
 ### Готовые решения {#vscode-text-solutions}
 
-* TextMate формат
-  * `glife/src/master/tools/syntax/VSCode/qsrc/syntaxes/QSP.tmLanguage.json`
-  * [LangQSP от некого slanon](https://git.tfgames.site/slanon/LangQSP/src/master/qsrc/syntaxes/QSP.tmLanguage.json)
+* TextMate Формат
+  * `glife/tools/syntax/VSCode/qsrc/syntaxes/QSP.tmLanguage.json`
+  * [Формат TextMate от некого Xorgroth](https://gitlab.com/kevinsmartstfg/girl-life/-/raw/master/tools/syntax/VSCode/qsrc/syntaxes/QSP.tmLanguage.json)
 
 * семантическая подсветка
   * Связка `Qsp.FSharp.Parser`, `Qsp.FSharp.ServerLanguage` и `Qsp.FSharp.VsCode`

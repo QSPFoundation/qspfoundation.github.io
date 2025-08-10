@@ -1,48 +1,48 @@
 ---
-title: Зарезервированные слова, системные переменные, спецсимволы
+title: Reserved Words, System Variables, Special Characters
 sidebar_position: 6
 ---
 
-# Указатель
+# Index
 
-:::warning[Внимание!]
-Вычеркнутые команды не работают в плеерах версии 5.8.0 и выше.
+:::warning[Attention!]
+Crossed out commands do not work in players version 5.8.0 and above.
 :::
 
-- [Неявный оператор](qsp-keyword-operators#неявный-оператор)
-- [`!` (комментарий)](qsp-keyword-operators.md#-комментарий)
-- [`!` (не равно)](qsp-keyword-operacion.md#-не-равно-1)
-- [`&` (конкатенация)](qsp-keyword-operacion.md#-конкатенация)
-- [`&` (перечисление команд)](qsp-keyword-syntaxems.md#амперсанд-)
-- [`:` (метки)](qsp-keyword-syntaxems.md#метки-)
-- [`,` (разделитель аргументов)](qsp-keyword-syntaxems.md#запятая-)
-- [`""` (кавычки)](qsp-keyword-syntaxems.md#кавычка-)
-- [`''` (апострофы)](qsp-keyword-syntaxems.md#апостроф-)
-- [`{}` (Фигурные скобки)](qsp-keyword-syntaxems.md#фигурные-скобки-)
-- [`()` (круглые скобки)](qsp-keyword-syntaxems.md#круглые-скобки-)
-- [`[]` (квадратные скобки)](qsp-keyword-syntaxems.md#квадратные-скобки-)
-- [`@` (коммерческое "эт")](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D1%8D%D1%82-) - 5.8.0
-- [`$` (знак доллара)](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%B7%D0%BD%D0%B0%D0%BA-%D0%B4%D0%BE%D0%BB%D0%BB%D0%B0%D1%80%D0%B0-)
-- [`%` (знак процента)](qsp-keyword-syntaxems#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%B7%D0%BD%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%BD%D1%82%D0%B0-) - 5.9.0
-- [`*`](qsp-keyword-operacion.md#-умножение)
-- [`*=`](qsp-keyword-operacion.md#-умножение-присвоение)
-- [`+`](qsp-keyword-operacion.md#-сложение)
-- [`+=`](qsp-keyword-operacion.md#-сложение-присвоение)
-- ~~[`+` (унарный)](qsp-keyword-operacion.md#--унарный-минус)~~
-- [`-`](qsp-keyword-operacion.md#--вычитание)
-- [`-=`](qsp-keyword-operacion.md#--вычитание-присвоение)
-- [`-` (унарный)](qsp-keyword-operacion.md#--унарный-минус)
-- [`/`](qsp-keyword-operacion.md#-деление)
-- [`/=`](qsp-keyword-operacion.md#-деление-присвоение)
-- [`<`](qsp-keyword-operacion.md#-меньше)
-- [`<=`](qsp-keyword-operacion.md#-меньше-либо-равно)
-- [`<>`](qsp-keyword-operacion.md#-не-равно)
-- [`=` (равно)](qsp-keyword-operacion.md#-равно)
-- [`=` (присвоение)](qsp-keyword-operacion.md#-присвоение)
-- [`=<`](qsp-keyword-operacion.md#-равно-либо-меньше)
-- [`=>`](qsp-keyword-operacion.md#-равно-или-больше)
-- [`>`](qsp-keyword-operacion.md#-больше)
-- [`>=`](qsp-keyword-operacion.md#-больше-либо-равно)
+- [Implicit operator](qsp-keyword-operators#implicit-operator)
+- [`!` (comment)](qsp-keyword-operators.md#-comment)
+- [`!` (not equal)](qsp-keyword-operacion.md#-not-equal-1)
+- [`&` (concatenation)](qsp-keyword-operacion.md#-concatenation)
+- [`&` (command enumeration)](qsp-keyword-syntaxems.md#ampersand-)
+- [`:` (labels)](qsp-keyword-syntaxems.md#labels-)
+- [`,` (argument separator)](qsp-keyword-syntaxems.md#comma-)
+- [`""` (quotes)](qsp-keyword-syntaxems.md#quote-)
+- [`''` (apostrophes)](qsp-keyword-syntaxems.md#apostrophe-)
+- [`{}` (Curly braces)](qsp-keyword-syntaxems.md#curly-braces-)
+- [`()` (round brackets)](qsp-keyword-syntaxems.md#round-brackets-)
+- [`[]` (square brackets)](qsp-keyword-syntaxems.md#square-brackets-)
+- [`@` (commercial "at")](qsp-keyword-syntaxems#commercial-at-symbol-) - 5.8.0
+- [`$` (dollar sign)](qsp-keyword-syntaxems#dollar-sign-symbol-)
+- [`%` (percent sign)](qsp-keyword-syntaxems#percent-sign-symbol-) - 5.9.0
+- [`*`](qsp-keyword-operacion.md#-multiplication)
+- [`*=`](qsp-keyword-operacion.md#-multiplication-assignment)
+- [`+`](qsp-keyword-operacion.md#-addition)
+- [`+=`](qsp-keyword-operacion.md#-addition-assignment)
+- ~~[`+` (unary)](qsp-keyword-operacion.md#--unary-minus)~~
+- [`-`](qsp-keyword-operacion.md#--subtraction)
+- [`-=`](qsp-keyword-operacion.md#--subtraction-assignment)
+- [`-` (unary)](qsp-keyword-operacion.md#--unary-minus)
+- [`/`](qsp-keyword-operacion.md#-division)
+- [`/=`](qsp-keyword-operacion.md#-division-assignment)
+- [`<`](qsp-keyword-operacion.md#-less-than)
+- [`<=`](qsp-keyword-operacion.md#-less-than-or-equal)
+- [`<>`](qsp-keyword-operacion.md#-not-equal)
+- [`=` (equal)](qsp-keyword-operacion.md#-equal)
+- [`=` (assignment)](qsp-keyword-operacion.md#-assignment)
+- [`=<`](qsp-keyword-operacion.md#-equal-or-less)
+- [`=>`](qsp-keyword-operacion.md#-equal-or-greater)
+- [`>`](qsp-keyword-operacion.md#-greater-than)
+- [`>=`](qsp-keyword-operacion.md#-greater-than-or-equal)
 - [`ACT`](qsp-keyword-operators.md#act)
 - ~~[`ADDLIB`](qsp-keyword-operators.md#inclib)~~
 - [`ADDOBJ`](qsp-keyword-operators.md#addobj)
