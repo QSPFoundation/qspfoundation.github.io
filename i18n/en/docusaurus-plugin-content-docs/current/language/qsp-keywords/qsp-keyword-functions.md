@@ -239,123 +239,6 @@ loop local i = 1 while i <= countobj step i += 1:
 end
 ```
 
-## `$QSPVER`
-
-`$QSPVER` - returns the interpreter version in the format "X.Y.Z Player". For example, classic player version 5.8.0 returns the value "5.8.0 (classic)", and qSpider simply "5.8.0". Usage example:
-
-```qsp
-if $qspver < "5.8.0":
-    *pl "Your player version is not suitable for this game."
-    *pl "Install player version 5.8.0 or higher."
-end
-```
-
-This function can also return the platform on which the game is running if you specify "platform" as an argument:
-
-```qsp
-$qspver('platform')
-```
-
-:::note[5.7.0]
-
-In older player versions, the function returned only the interpreter version (libqsp library).
-
-:::
-
-## `$SELACT`
-
-`$SELACT` — returns the name of the selected action anywhere in the game.
-
-Remember that action selection occurs when hovering the mouse pointer over it, not when directly clicking.
-
-Most often this function is used to remove the current action:
-
-```qsp
-act "Eat apple":
-    *pl "It was a very tasty apple. Too bad it was wormy."
-    health += 100
-    delact $selact
-end
-```
-
-Also see usage examples in the [`$onactsel`](qsp-keyword-sys-var.md#onactsel) section
-
-## `$SELOBJ`
-
-`$SELOBJ` — returns the name of the selected object anywhere in the game. Object selection occurs when clicking (mouse click on object) and is not removed until the `unselect` command is applied.
-
-Usage examples can be found in the [`$onobjsel`](qsp-keyword-sys-var.md#onobjsel) section
-
-## `$STATTXT`
-
-`$STATTXT` — returns text output to the additional description window. Can be useful for replacing part of text in the additional description window.
-
-Example:
-
-```qsp
-p 'The Ship Carried Caramel'
-nl 'The Ship Hit a Shoal'
-$string = $stattxt
-```
-
-## `$USER_TEXT`
-
-`$USER_TEXT` — anywhere in the game returns text that is in the input line (input field). Has the short form `$usrtxt`.
-
-Example of an action that will output text entered in the input line to the additional description window when clicked:
-
-```qsp
-act "What did I write?": pl 'I wrote: "<<$user_text>>".'
-```
-
-A more common example is presented in the [`$usercom`](qsp-keyword-sys-var.md#usercom) section.
-
-## COUNTOBJ
-
-`COUNTOBJ` — returns the number of items in inventory.
-
-The number of the last item in the list numerically matches the number of items, so you can always get the name of the last item like this:
-
-```qsp
-$getobj(countobj)
-```
-
-## MSECSCOUNT
-
-`MSECSCOUNT` — returns the number of milliseconds elapsed since the game started. This function, when used at the counter location, allows organizing various events occurring in real time. Also, with this function you can measure performance of various code sections in your game:
-
-```qsp
-i = 0
-old_time = msecscount
-:for
-if i < 100000:
-    d[i] = i
-    i += 1
-    jump 'for'
-end
-new_time = msecscount
-pl "Old loop performance: " + $str(new_time - old_time)
-
-old_time = msecscount
-loop i = 0 while i < 100000 step i += 1:
-    b[i] = i
-end
-new_time = msecscount
-pl "New loop performance: " + $str(new_time - old_time)
-```
-
-:::note
-The maximum number this function can return is `2147483647`. It's not hard to calculate that this is enough for more than **550** hours of gameplay.
-:::
-
-## RND
-
-`RND` - returns a random value from `1` to `1000`. Analogous to the command:
-
-```qsp
-rand(1, 1000)
-```
-
 ## `$IIF`
 
 `IIF` — returns a value depending on expression truth.
@@ -507,6 +390,46 @@ $text_new = $replace($text, " and in this string there's a piece we want to remo
 *p $text_new
 ```
 
+## `$MAX`
+
+`MAX` — returns the maximum of expression-argument values. You can pass from one to twenty values/arguments. If one argument is passed, it's considered that an array name is specified. General syntax:
+
+```qsp
+MAX([#expression 1], [#expression 2], ... , [#expression 20])
+$MAX([$expression 1], [$expression 2], ... , [$expression 20])
+
+MAX([$array_name])
+$MAX([$array_name])
+```
+
+Note, when passing one argument, the search for maximum element occurs among string (if array name is specified with `$` sign) or among numeric values of array elements. For example:
+
+```qsp
+max('a') & ! returns maximum of numeric values of "a" array elements
+$max('$b') & ! returns maximum of string values of "b" array elements
+```
+
+You can't write like this and expect search among array `a` values:
+
+```qsp
+max(a)
+```
+
+You can do this:
+
+```qsp
+$b = 'a'
+max($b) & ! search for maximum value among elements of "a" array will occur
+```
+
+Other examples:
+
+```qsp
+max(1, 2, 5, 2, 0) &! returns 5
+max(a, b, c) &! returns maximum of variable values a,b,c
+$max('aa', 'ab', 'zz') &! returns 'zz'
+```
+
 ## `$MID`
 
 `$MID` — allows cutting a part from a string. General syntax:
@@ -529,6 +452,69 @@ $mid('abcdef')        &    ! 'error [120] — incorrect number of operator/funct
 $mid('abcdef', 0)    &    ! 'abcdef'
 $mid('abcdef', 8)    &    ! ''
 ```
+
+## `$MIN`
+
+`MIN` — returns the minimum of expression-argument values. You can pass from one to twenty values/arguments. If one argument is passed, it's considered that an array name is specified. General syntax:
+
+```qsp
+MIN([#expression 1], [#expression 2], ... , [#expression 20])
+$MIN([$expression 1], [$expression 2], ... , [$expression 20])
+
+MIN([$array_name])
+$MIN([$array_name])
+```
+
+Note, when passing one argument, the search for minimum element occurs among string (if array name is specified with `$` sign) or among numeric values of array elements. For example:
+
+```qsp
+min('a')    & ! returns minimum of numeric values of "a" array elements
+$min('$b')    & ! returns minimum of string values of "b" array elements
+```
+
+You can't write like this:
+
+```qsp
+min(a)
+```
+
+You can do this:
+
+```qsp
+$b = 'a'
+min($b) & ! search for maximum value among elements of "a" array will occur
+```
+
+Other examples:
+
+```qsp
+min(1, 2, 5, 2, 0)    &    ! returns 0
+min(a, b, c)        &    ! returns minimum of variable values a,b,c
+$min('aa', 'ab', 'zz') & ! returns 'aa'
+```
+
+## `$QSPVER`
+
+`$QSPVER` - returns the interpreter version in the format "X.Y.Z Player". For example, classic player version 5.8.0 returns the value "5.8.0 (classic)", and qSpider simply "5.8.0". Usage example:
+
+```qsp
+if $qspver < "5.8.0":
+    *pl "Your player version is not suitable for this game."
+    *pl "Install player version 5.8.0 or higher."
+end
+```
+
+This function can also return the platform on which the game is running if you specify "platform" as an argument:
+
+```qsp
+$qspver('platform')
+```
+
+:::note[5.7.0]
+
+In older player versions, the function returned only the interpreter version (libqsp library).
+
+:::
 
 ## `$REPLACE`
 
@@ -557,6 +543,42 @@ $text = "Text string with different letters."
 $text_new = $replace($text, "st", "st")
 *pl $text
 *pl $text_new
+```
+
+## `$SELACT`
+
+`$SELACT` — returns the name of the selected action anywhere in the game.
+
+Remember that action selection occurs when hovering the mouse pointer over it, not when directly clicking.
+
+Most often this function is used to remove the current action:
+
+```qsp
+act "Eat apple":
+    *pl "It was a very tasty apple. Too bad it was wormy."
+    health += 100
+    delact $selact
+end
+```
+
+Also see usage examples in the [`$onactsel`](qsp-keyword-sys-var.md#onactsel) section
+
+## `$SELOBJ`
+
+`$SELOBJ` — returns the name of the selected object anywhere in the game. Object selection occurs when clicking (mouse click on object) and is not removed until the `unselect` command is applied.
+
+Usage examples can be found in the [`$onobjsel`](qsp-keyword-sys-var.md#onobjsel) section
+
+## `$STATTXT`
+
+`$STATTXT` — returns text output to the additional description window. Can be useful for replacing part of text in the additional description window.
+
+Example:
+
+```qsp
+p 'The Ship Carried Caramel'
+nl 'The Ship Hit a Shoal'
+$string = $stattxt
 ```
 
 ## `$STR`
@@ -589,48 +611,7 @@ For example, let's take the regular expression:
 ^(\S+)\s(\S+)\s(\S+)$
 ```
 
-The `\S` metacharacter means any non-whitespace character, and the `+` quantifier indicates that non-whitespace characters must be present one or more times. Thus the notation `\S+` can be conditionally matched to a word. Each word is enclosed in separate groups using parentheses `()`, and whitespace characters `\s` are present between groups. The `^` and `## `$IIF`
-
-`IIF` — returns a value depending on expression truth.
-
-General syntax:
-
-```qsp
-IIF([#expression], [#expression_yes], [#expression_no])
-$IIF([#expression], [$expression_yes], [$expression_no])
-```
-
-If `[#expression]` is true, returns the value of expression `[expression_yes]`, otherwise returns the value of expression `[expression_no]`.
-
-Only one of the expressions `[expression_yes]` and `[expression_no]` will be calculated, depending on whether the condition is met.
-
-Examples:
-
-```qsp
-!Absolute value of number
-abs_x = iif(x>0, x, -x)
-
-!And the following construct will NOT cause division by zero error:
-x = 0
-y  = iif(x = 0, 0, 1/x)
-
-! typical solution for outputting time so as not to lose zero on hours:
-$iif(hour>9, $str(hour), "0"+$str(hour)) + ":"+$iif(minute>9, $str(minute), "0"+$str(minute))
-```
-
-Equivalence of conditional constructs with `IF` operator and `IIF` function:
-
-```qsp
-if number mod 2 = 0:
-    *pl "Number is even"
-else
-    *pl "Number is odd"
-end
-! equivalent to
-*pl $iif(number mod 2 = 0,"Number is even","Number is odd")
-```
-
- metacharacters mean the beginning and end of string respectively. Thus our regular expression matches any string of three words separated by spaces.
+The `\S` metacharacter means any non-whitespace character, and the `+` quantifier indicates that non-whitespace characters must be present one or more times. Thus the notation `\S+` can be conditionally matched to a word. Each word is enclosed in separate groups using parentheses `()`, and whitespace characters `\s` are present between groups. The `^` and `$` metacharacters mean the beginning and end of string respectively. Thus our regular expression matches any string of three words separated by spaces.
 
 Then:
 
@@ -638,13 +619,13 @@ Then:
 ! in this case the string doesn't match the regular expression
 ! because according to the regular expression the string should start
 ! with a group of non-whitespace characters. The command will return empty string ''
-$strfind(' go to cave','^(\S+)\s(\S+)\s(\S+))
+$strfind(' go to cave','^(\S+)\s(\S+)\s(\S+)$')
 ```
 
 ```qsp
 ! in this case the string fully matches the regular expression
 ! so the command will return the string entirely 'go to cave'
-$strfind('go to cave','^(\S+)\s(\S+)\s(\S+)) = ''
+$strfind('go to cave','^(\S+)\s(\S+)\s(\S+)$')
 ```
 
 ```qsp
@@ -652,21 +633,21 @@ $strfind('go to cave','^(\S+)\s(\S+)\s(\S+)) = ''
 ! but the third argument specifies which group from this
 ! regular expression we want to get, so each command will return
 ! the first, second and third words from the string respectively
-$strfind('go to cave','^(\S+)\s(\S+)\s(\S+), 1) & ! returns 'go'
-$strfind('go to cave','^(\S+)\s(\S+)\s(\S+), 2) & ! returns 'to'
-$strfind('go to cave','^(\S+)\s(\S+)\s(\S+), 3) & ! returns 'cave'
+$strfind('go to cave','^(\S+)\s(\S+)\s(\S+)$', 1) & ! returns 'go'
+$strfind('go to cave','^(\S+)\s(\S+)\s(\S+)$', 2) & ! returns 'to'
+$strfind('go to cave','^(\S+)\s(\S+)\s(\S+)$', 3) & ! returns 'cave'
 ```
 
 ```qsp
 ! here the last group of non-whitespace characters is combined into one
 ! group with the last whitespace character. The "?" quantifier indicates
 ! that this group may or may not be present in the string:
-$strfind('go to cave', '^(\S+)\s(\S+)(\s(\S+))?, 4) & ! returns 'cave'
-$strfind('go to cave', '^(\S+)\s(\S+)(\s(\S+))?, 3) & ! returns ' cave'
+$strfind('go to cave', '^(\S+)\s(\S+)(\s(\S+))?$', 4) & ! returns 'cave'
+$strfind('go to cave', '^(\S+)\s(\S+)(\s(\S+))?$', 3) & ! returns ' cave'
 ! this regular expression also matches this string
-$strfind('search key', '^(\S+)\s(\S+)(\s(\S+))?, 1) & ! returns 'search'
+$strfind('search key', '^(\S+)\s(\S+)(\s(\S+))?$', 1) & ! returns 'search'
 ! but this string no longer matches the regular expression
-$strfind('search', '^(\S+)\s(\S+)(\s(\S+))?, 1) & ! returns ''
+$strfind('search', '^(\S+)\s(\S+)(\s(\S+))?$', 1) & ! returns ''
 ```
 
 The following examples show how `$strfind` returns part of string matching the regular expression:
@@ -725,370 +706,17 @@ $ucase('Hello, Alice!') & ! returns 'HELLO, ALICE!'
 $ucase('I want to shout at you.') & ! returns 'I WANT TO SHOUT AT YOU.'
 ```
 
-## INSTR
+## `$USER_TEXT`
 
-`INSTR` — returns the character number from which the substring occurrence begins in the string. General syntax:
+`$USER_TEXT` — anywhere in the game returns text that is in the input line (input field). Has the short form `$usrtxt`.
 
-```qsp
-INSTR([$string], [$substring], [#start])
-```
-
-, where `[#start]` — the character number from which to start the search, `[$string]` — text value (string) in which to search, and `[$substring]` — value we're looking for in the specified string. Character numbering starts from `1`. The `[#start]` parameter can be absent, in which case it's taken as 1.
-
-Examples:
+Example of an action that will output text entered in the input line to the additional description window when clicked:
 
 ```qsp
-instr('abcdefabcdef', 'bc', 3)    & ! returns number 8
-instr('abcdefghijklm', 'abc')    & ! returns number 1
+act "What did I write?": pl 'I wrote: "<<$user_text>>".'
 ```
 
-If no occurrence of the specified substring is found in the string, `instr` returns `0`.
-
-Example:
-
-```qsp
-instr('Vasya left the house.', 'go') & ! returns 0
-```
-
-:::note[5.7.0]
-In older player versions, the `[#start]` parameter was specified first:
-
-```qsp
-INSTR([#start], [$string], [$substring])
-```
-
-:::
-
-## ISNUM
-
-`ISNUM` — function returns `1` (true) if the passed string is a number, and `0` if the string is not a number. General syntax:
-
-```qsp
-ISNUM([$string])
-```
-
-, where `[$string]` — any text string.
-
-The check takes into account the `-` sign at the beginning, adjacent spaces and tab characters, but if at least one character turns out not to be a digit, the function will return `0` (false).
-
-Examples:
-
-```qsp
-isnum(' 9999 ') & ! returns 1
-isnum(' -888')  & ! returns 1
-isnum('777a6')  & ! returns 0
-isnum('')       & ! returns 0, since empty string contains no number
-```
-
-## ISPLAY
-
-`ISPLAY` — function checks if a file with the specified name is currently playing, and if it is, returns `1`. Otherwise the function returns `0`. General syntax:
-
-```qsp
-ISPLAY([$file_path])
-```
-
-, where `[$file_path]` — path to sound file relative to game file.
-
-Example:
-
-```qsp
-if isplay('music/mountsound.mp3'):
-    *pl 'Music is playing.'
-else
-    *pl 'Music is not playing.'
-end
-```
-
-## LEN
-
-`LEN` — returns the length of the specified text string (number of characters). General syntax:
-
-```qsp
-LEN([$text])
-```
-
-, where `[$text]` — any text value.
-
-Examples:
-
-```qsp
-len("abc") & ! returns value 3
-len("thousand-nine-hundred-eighty-nine-millimeter") & ! returns value 46
-len("") & ! returns value 0
-```
-
-## STRCOMP
-
-`STRCOMP` — compares a string with a regular expression and, if the string matches the regular expression, returns `1` (true), and if it doesn't match — `0` (false). General syntax:
-
-```qsp
-STRCOMP([$string], [$pattern])
-```
-
-, where `[$string]` — any text value, `[$pattern]` — regular expression to compare with.
-
-For example, we need to check if the specified string consists of three words. Each word, roughly speaking, is a set of non-whitespace characters, so we can use the `\S` metacharacter with the `+` quantifier. Words are usually separated by whitespace characters, for which we use the `\s` metacharacter. We get this regular expression:
-
-```regex
-\s?\S+\s+\S+\s+\S+\s?
-```
-
-Now we can check which strings match this regular expression:
-
-```qsp
-strcomp('go along road', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 1
-strcomp(' go home', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 0
-strcomp(' go to forest ', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 1
-strcomp('oneword', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 0
-```
-
-## STRPOS
-
-`STRPOS` — returns the position of the character from which the substring occurrence matching the regular expression begins in the specified string. General syntax:
-
-```qsp
-STRPOS([$string], [$pattern], [#number])
-```
-
-, where `[$string]` — source string in which we search for an occurrence matching regular expression `[$pattern]`, or group number `[#number]` in the regular expression. Group numbering in regular expression starts from 1. If substring with specified number is absent, `0` is returned.
-
-If parameter `[#number]` is absent or equals `0`, the position of the character from which the substring occurrence matching the entire regular expression begins is returned.
-
-For example, we need to find out in which part of the text the phrase "green apple" occurs, but the case of this adjective shouldn't matter.
-
-To write a regular expression for this task, we need to account for all cases:
-
-```plain
-green apple
-green apple
-green apple
-green apple
-green apple
-green apple
-```
-
-As we can see, only word endings change in all forms. Therefore we can compose this regular expression:
-
-```regex
-green(oe|ogo|omu|ym|om)\s+apple(o|a|u|om|e)
-```
-
-Possible ending variants are listed through a vertical bar in parentheses. And now let's find out from which character in the string the possible phrase "green apple" begins:
-
-```qsp
-! for convenience we put the regular expression in a variable
-$regexp = "green(oe|ogo|omu|ym|om)\s+apple(o|a|u|om|e)"
-strpos("I have a green apple", $regexp) & ! returns 13
-strpos("You threw a green apple at him!", $regexp) & ! returns 19
-strpos("full box of green apples", $regexp) & ! returns 0, because we didn't account for this form
-```
-
-If we don't just want to know from which character the phrase occurrence begins in the string, but specifically where the word "apple" from this phrase begins, we need to put the word "apple" with ending variants in a separate group and use the `[#number]` parameter:
-
-```qsp
-$regexp = "green(oe|ogo|omu|ym|om)\s+(apple(o|a|u|om|e))"
-strpos("I have a green apple", $regexp, 2) & ! returns 21
-strpos("You threw a green apple at him!", $regexp, 2) & ! returns 27
-strpos("full box of green apples", $regexp, 2) & ! returns 0, because we didn't account for the form
-```
-
-Other examples:
-
-```qsp title="Working with groups"
-!------'----5--8------15--'
-STRPOS('+33-671-190-23-999', '\+\d{1,2}-(\d{3})((-\d+)+)',1) &! we'll see 5 on screen
-STRPOS('+33-671-190-23-999', '\+\d{1,2}-(\d{3})((-\d+)+)',2) &! we'll see 8 on screen
-STRPOS('+33-671-190-23-999', '\+\d{1,2}-(\d{3})((-\d+)+)',3) &! we'll see 15 on screen
-```
-
-```qsp title="Searching for number in string without number"
-STRPOS('Eight green apples in basket','\d+') &! 0 will be on screen
-```
-
-```qsp
-STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+), 0) &! 1
-STRPOS(' go to cave', '^(\S+)\s(\S+)\s(\S+), 0) &! 0
-STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+), 1)  &! 1
-STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+), 2)  &! 6
-STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+), 3)  &! 8
-STRPOS('go to cave', '^(\S+)\s(\S+)(\s(\S+))?, 4) &! 8
-STRPOS('go to house', 'to\s(\S+)', 0) &! 6
-STRPOS('go to house', 'to\s(\S+)')    &! 6
-STRPOS('go to house', 'to\s(\S+)', 1) &! 8
-STRPOS('go to my house', 'to\s(\S+)', 1) &! 8
-```
-
-## VAL
-
-`VAL` — converts the specified digit string to corresponding number. General syntax:
-
-```qsp
-VAL([$expression])
-```
-
-, where `[$expression]` — any text string.
-
-The check takes into account the `-` sign at the beginning, adjacent spaces and tab characters, but if at least one character turns out not to be a digit, the function will return `0`. Also if `[$expression]` equals `''` (empty string), `0` is returned.
-
-Examples:
-
-```qsp
-apples = val($apples)
-
-val('123') & ! we'll see 123
-val('') & ! we'll see 0
-val('sand') & ! we'll see 0
-```
-
-## `$MAX`
-
-`MAX` — returns the maximum of expression-argument values. You can pass from one to twenty values/arguments. If one argument is passed, it's considered that an array name is specified. General syntax:
-
-```qsp
-MAX([#expression 1], [#expression 2], ... , [#expression 20])
-$MAX([$expression 1], [$expression 2], ... , [$expression 20])
-
-MAX([$array_name])
-$MAX([$array_name])
-```
-
-Note, when passing one argument, the search for maximum element occurs among string (if array name is specified with `$` sign) or among numeric values of array elements. For example:
-
-```qsp
-max('a') & ! returns maximum of numeric values of "a" array elements
-$max('$b') & ! returns maximum of string values of "b" array elements
-```
-
-You can't write like this and expect search among array `a` values:
-
-```qsp
-max(a)
-```
-
-You can do this:
-
-```qsp
-$b = 'a'
-max($b) & ! search for maximum value among elements of "a" array will occur
-```
-
-Other examples:
-
-```qsp
-max(1, 2, 5, 2, 0) &! returns 5
-max(a, b, c) &! returns maximum of variable values a,b,c
-$max('aa', 'ab', 'zz') &! returns 'zz'
-```
-
-## `$MIN`
-
-`MIN` — returns the minimum of expression-argument values. You can pass from one to twenty values/arguments. If one argument is passed, it's considered that an array name is specified. General syntax:
-
-```qsp
-MIN([#expression 1], [#expression 2], ... , [#expression 20])
-$MIN([$expression 1], [$expression 2], ... , [$expression 20])
-```
-
-```qsp
-MIN([$array_name])
-$MIN([$array_name])
-```
-
-Note, when passing one argument, the search for minimum element occurs among string (if array name is specified with `$` sign) or among numeric values of array elements. For example:
-
-```qsp
-min('a')    & ! returns minimum of numeric values of "a" array elements
-$min('$b')    & ! returns minimum of string values of "b" array elements
-```
-
-You can't write like this:
-
-```qsp
-min(a)
-```
-
-You can do this:
-
-```qsp
-$b = 'a'
-min($b) & ! search for maximum value among elements of "a" array will occur
-```
-
-Other examples:
-
-```qsp
-min(1, 2, 5, 2, 0)    &    ! returns 0
-min(a, b, c)        &    ! returns minimum of variable values a,b,c
-$min('aa', 'ab', 'zz') & ! returns 'aa'
-```
-
-## RAND
-
-`RAND` — returns a random number between two specified numbers. General syntax:
-
-```qsp
-RAND([#expression 1], [#expression 2], [#mode])
-```
-
-, where `[#expression 1]` and `[#expression 2]` — any two numbers or numeric expressions.
-
-The `[#mode]` parameter allows specifying a number that should occur more frequently than others. The frequency distribution will smoothly change for all other numbers, decreasing from mode to the limits of the selected interval. If the 3rd parameter is not specified, the function returns a random number in the specified range with uniform/equiprobable number distribution.
-
-The `[#expression 2]` parameter can be absent, in which case it's taken as `1`.
-
-:::note[5.7.0]
-In older player versions, this parameter defaults to zero.
-:::
-
-Examples:
-
-```qsp
-rand(1, 4) &! returns random value from 1 to 4
-rand(4, 1) &! returns random value from 1 to 4
-rand(1000) &! returns random value from 1 to 1000
-rand 1000 &! returns random value from 1 to 1000
-
-x = RAND(1, 1000, 500) & ! 500 will occur more often
-x = RAND(1, 1000, 1) & ! 1 will occur more often
-x = RAND(1, 1000, 1000) & ! 1000 will occur more often
-x = RAND(-1000, 0, -500) & ! -500 will occur more often
-x = RAND(1, 1000, 5000) & ! 1000 will occur more often
-x = RAND(-1000, -100, -5000) & ! -1000 will occur more often
-```
-
-## RGB
-
-`RGB` — returns the numeric color code based on three numeric arguments, each corresponding to a component of the required color. General syntax:
-
-```qsp
-RGB([#red], [#green], [#blue], [#alpha])
-```
-
-, where `[#red]`, `[#green]` and `[#blue]` — numeric expression of three color components respectively red, green and blue; `[#alpha]` — transparency component; should take values from 0 to 255.
-
-This function is usually used together with system variables `bcolor`, `fcolor`, `lcolor`. Example:
-
-```qsp
-! light yellow hyperlinks
-lcolor = rgb(255, 255, 100)
-! dark gray background
-bcolor = rgb(25, 25, 25)
-! light green text
-fcolor = rgb(100, 255, 100)
-```
-
-Example of semi-transparent link color:
-
-```qsp
-lcolor = rgb(0, 255, 255, 128)
-```
-
-:::note[Note.]
-
-Don't rely on the `[#alpha]` parameter as many players don't support it.
-
-:::
+A more common example is presented in the [`$usercom`](qsp-keyword-sys-var.md#usercom) section.
 
 ## ARRCOMP
 
@@ -1299,7 +927,7 @@ ARRPOS([#start], [$array_name], [$pattern])
 `ARRTYPE` — returns the type of value stored in a variable or specified array cell. The type is returned as one of the following values:
 - `''` (empty string) — value not defined (for example, for uninitialized variables);
 - `'#'` — variable contains number;
-- `'` — variable contains string;
+- `'$'` — variable contains string;
 - `'%'` — variable contains tuple.
 
 General syntax:
@@ -1314,7 +942,7 @@ Examples:
 
 ```qsp
 $ddd = 'text'
-arrtype('ddd') & ! '
+arrtype('ddd') & ! '$'
 
 $g = 'text' & g = 13
 arrtype('g') & ! '#'
@@ -1336,87 +964,150 @@ ARRSIZE([$array_name])
 
 , where `[$array_name]` — the name of the array whose size we want to get.
 
-It doesn't matter whether you specify **`## `$MAX`
-
-`MAX` — returns the maximum of expression-argument values. You can pass from one to twenty values/arguments. If one argument is passed, it's considered that an array name is specified. General syntax:
+It doesn't matter whether you specify **`$`** before the array name or not. The total number of cells with both string and numeric values is counted. For example:
 
 ```qsp
-MAX([#expression 1], [#expression 2], ... , [#expression 20])
-$MAX([$expression 1], [$expression 2], ... , [$expression 20])
-
-MAX([$array_name])
-$MAX([$array_name])
+n = ARRSIZE('a')
+n = ARRSIZE('$a')
+! The result will be the same
 ```
 
-Note, when passing one argument, the search for maximum element occurs among string (if array name is specified with `$` sign) or among numeric values of array elements. For example:
+:::warning[Attention!]
+
+If an array was declared using the `LOCAL` operator, but no value was assigned to any array element, `ARRSIZE` of such array will return `0`.
+
+:::
+
+## COUNTOBJ
+
+`COUNTOBJ` — returns the number of items in inventory.
+
+The number of the last item in the list numerically matches the number of items, so you can always get the name of the last item like this:
 
 ```qsp
-max('a') & ! returns maximum of numeric values of "a" array elements
-$max('$b') & ! returns maximum of string values of "b" array elements
+$getobj(countobj)
 ```
 
-You can't write like this and expect search among array `a` values:
+## INSTR
+
+`INSTR` — returns the character number from which the substring occurrence begins in the string. General syntax:
 
 ```qsp
-max(a)
+INSTR([$string], [$substring], [#start])
 ```
 
-You can do this:
+, where `[#start]` — the character number from which to start the search, `[$string]` — text value (string) in which to search, and `[$substring]` — value we're looking for in the specified string. Character numbering starts from `1`. The `[#start]` parameter can be absent, in which case it's taken as 1.
+
+Examples:
 
 ```qsp
-$b = 'a'
-max($b) & ! search for maximum value among elements of "a" array will occur
+instr('abcdefabcdef', 'bc', 3)    & ! returns number 8
+instr('abcdefghijklm', 'abc')    & ! returns number 1
 ```
 
-Other examples:
+If no occurrence of the specified substring is found in the string, `instr` returns `0`.
+
+Example:
 
 ```qsp
-max(1, 2, 5, 2, 0) &! returns 5
-max(a, b, c) &! returns maximum of variable values a,b,c
-$max('aa', 'ab', 'zz') &! returns 'zz'
+instr('Vasya left the house.', 'go') & ! returns 0
 ```
 
-## `$MIN`
-
-`MIN` — returns the minimum of expression-argument values. You can pass from one to twenty values/arguments. If one argument is passed, it's considered that an array name is specified. General syntax:
+:::note[5.7.0]
+In older player versions, the `[#start]` parameter was specified first:
 
 ```qsp
-MIN([#expression 1], [#expression 2], ... , [#expression 20])
-$MIN([$expression 1], [$expression 2], ... , [$expression 20])
+INSTR([#start], [$string], [$substring])
 ```
+
+:::
+
+## ISNUM
+
+`ISNUM` — function returns `1` (true) if the passed string is a number, and `0` if the string is not a number. General syntax:
 
 ```qsp
-MIN([$array_name])
-$MIN([$array_name])
+ISNUM([$string])
 ```
 
-Note, when passing one argument, the search for minimum element occurs among string (if array name is specified with `$` sign) or among numeric values of array elements. For example:
+, where `[$string]` — any text string.
+
+The check takes into account the `-` sign at the beginning, adjacent spaces and tab characters, but if at least one character turns out not to be a digit, the function will return `0` (false).
+
+Examples:
 
 ```qsp
-min('a')    & ! returns minimum of numeric values of "a" array elements
-$min('$b')    & ! returns minimum of string values of "b" array elements
+isnum(' 9999 ') & ! returns 1
+isnum(' -888')  & ! returns 1
+isnum('777a6')  & ! returns 0
+isnum('')       & ! returns 0, since empty string contains no number
 ```
 
-You can't write like this:
+## ISPLAY
+
+`ISPLAY` — function checks if a file with the specified name is currently playing, and if it is, returns `1`. Otherwise the function returns `0`. General syntax:
 
 ```qsp
-min(a)
+ISPLAY([$file_path])
 ```
 
-You can do this:
+, where `[$file_path]` — path to sound file relative to game file.
+
+Example:
 
 ```qsp
-$b = 'a'
-min($b) & ! search for maximum value among elements of "a" array will occur
+if isplay('music/mountsound.mp3'):
+    *pl 'Music is playing.'
+else
+    *pl 'Music is not playing.'
+end
 ```
 
-Other examples:
+## LEN
+
+`LEN` — returns the length of the specified text string (number of characters). General syntax:
 
 ```qsp
-min(1, 2, 5, 2, 0)    &    ! returns 0
-min(a, b, c)        &    ! returns minimum of variable values a,b,c
-$min('aa', 'ab', 'zz') & ! returns 'aa'
+LEN([$text])
 ```
+
+, where `[$text]` — any text value.
+
+Examples:
+
+```qsp
+len("abc") & ! returns value 3
+len("thousand-nine-hundred-eighty-nine-millimeter") & ! returns value 46
+len("") & ! returns value 0
+```
+
+## MSECSCOUNT
+
+`MSECSCOUNT` — returns the number of milliseconds elapsed since the game started. This function, when used at the counter location, allows organizing various events occurring in real time. Also, with this function you can measure performance of various code sections in your game:
+
+```qsp
+i = 0
+old_time = msecscount
+:for
+if i < 100000:
+    d[i] = i
+    i += 1
+    jump 'for'
+end
+new_time = msecscount
+pl "Old loop performance: " + $str(new_time - old_time)
+
+old_time = msecscount
+loop i = 0 while i < 100000 step i += 1:
+    b[i] = i
+end
+new_time = msecscount
+pl "New loop performance: " + $str(new_time - old_time)
+```
+
+:::note
+The maximum number this function can return is `2147483647`. It's not hard to calculate that this is enough for more than **550** hours of gameplay.
+:::
 
 ## RAND
 
@@ -1485,56 +1176,132 @@ Don't rely on the `[#alpha]` parameter as many players don't support it.
 
 :::
 
-## ARRCOMP
+## RND
 
-`ARRCOMP` — returns the index of array element matching a regular expression. Search starts from element with specified number; array element indexing starts from zero. If the specified value is not found, the function returns -1. General syntax:
-
-```qsp
-ARRCOMP([$array_name], [$pattern], [#start])
-```
-
-, where `[#start]` — array element number from which to start search, `[$array_name]` — array name to search in, `[$pattern]` — regular expression to compare the searched element with.
-
-- The `[#start]` parameter can be absent, in which case its value is taken as 0.
-- Search works only on text arrays (the `$` symbol in array name can be omitted).
-
-For example, let's take this array:
+`RND` - returns a random value from `1` to `1000`. Analogous to the command:
 
 ```qsp
-$mass[0] = "stomp forward"
-$mass[1] = " go to cave"
-$mass[2] = "don't go to cave"
-$mass[3] = "stomp to house"
+rand(1, 1000)
 ```
 
-We need to find an element whose value consists of three words. Roughly speaking, a word is a set of one or more non-whitespace characters `\S+`, which can be surrounded by whitespace characters `\s`, so we can compose this regular expression:
+## STRCOMP
+
+`STRCOMP` — compares a string with a regular expression and, if the string matches the regular expression, returns `1` (true), and if it doesn't match — `0` (false). General syntax:
+
+```qsp
+STRCOMP([$string], [$pattern])
+```
+
+, where `[$string]` — any text value, `[$pattern]` — regular expression to compare with.
+
+For example, we need to check if the specified string consists of three words. Each word, roughly speaking, is a set of non-whitespace characters, so we can use the `\S` metacharacter with the `+` quantifier. Words are usually separated by whitespace characters, for which we use the `\s` metacharacter. We get this regular expression:
 
 ```regex
-\s?\S+\s\S+\s\S+\s?
+\s?\S+\s+\S+\s+\S+\s?
 ```
 
-Now we just need to find out which array element matches the pattern:
+Now we can check which strings match this regular expression:
 
 ```qsp
-arrcomp('$mass', '\s?\S+\s\S+\s\S+\s?') & ! the first element matches this expression
+strcomp('go along road', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 1
+strcomp(' go home', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 0
+strcomp(' go to forest ', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 1
+strcomp('oneword', '\s?\S+\s+\S+\s+\S+\s?') & ! returns 0
 ```
 
-If we want to ignore the first element and start search from the second:
+## STRPOS
+
+`STRPOS` — returns the position of the character from which the substring occurrence matching the regular expression begins in the specified string. General syntax:
 
 ```qsp
-arrcomp('$mass', '\s?\S+\s\S+\s\S+\s?', 2) & ! the third element matches this expression
+STRPOS([$string], [$pattern], [#number])
 ```
 
-** before the array name or not. The total number of cells with both string and numeric values is counted. For example:
+, where `[$string]` — source string in which we search for an occurrence matching regular expression `[$pattern]`, or group number `[#number]` in the regular expression. Group numbering in regular expression starts from 1. If substring with specified number is absent, `0` is returned.
+
+If parameter `[#number]` is absent or equals `0`, the position of the character from which the substring occurrence matching the entire regular expression begins is returned.
+
+For example, we need to find out in which part of the text the phrase "green apple" occurs, but the case of this adjective shouldn't matter.
+
+To write a regular expression for this task, we need to account for all cases:
+
+```plain
+green apple
+Green apple
+GREEN apple
+Green Apple
+GREEN APPLE
+```
+
+As we can see, only word endings change in all forms. Therefore we can compose this regular expression:
+
+```regex
+[Gg][Rr][Ee][Ee][Nn]\s+[Aa][Pp][Pp][Ll][Ee]
+```
+
+And now let's find out from which character in the string the possible phrase "green apple" begins:
 
 ```qsp
-n = ARRSIZE('a')
-n = ARRSIZE('$a')
-! The result will be the same
+! for convenience we put the regular expression in a variable
+$regexp = "[Gg][Rr][Ee][Ee][Nn]\s+[Aa][Pp][Pp][Ll][Ee]"
+strpos("I have a green apple", $regexp) & ! returns 10
+strpos("You threw a GREEN APPLE at him!", $regexp) & ! returns 13
+strpos("full box of red apples", $regexp) & ! returns 0, because we didn't account for this form
 ```
 
-:::warning[Attention!]
+If we don't just want to know from which character the phrase occurrence begins in the string, but specifically where the word "apple" from this phrase begins, we need to put the word "apple" with ending variants in a separate group and use the `[#number]` parameter:
 
-If an array was declared using the `LOCAL` operator, but no value was assigned to any array element, `ARRSIZE` of such array will return `0`.
+```qsp
+$regexp = "[Gg][Rr][Ee][Ee][Nn]\s+([Aa][Pp][Pp][Ll][Ee])"
+strpos("I have a green apple", $regexp, 1) & ! returns 16
+strpos("You threw a GREEN APPLE at him!", $regexp, 1) & ! returns 19
+strpos("full box of red apples", $regexp, 1) & ! returns 0, because we didn't account for the form
+```
 
-:::
+Other examples:
+
+```qsp title="Working with groups"
+!------'----5--8------15--'
+STRPOS('+33-671-190-23-999', '\+\d{1,2}-(\d{3})((-\d+)+)',1) &! we'll see 5 on screen
+STRPOS('+33-671-190-23-999', '\+\d{1,2}-(\d{3})((-\d+)+)',2) &! we'll see 8 on screen
+STRPOS('+33-671-190-23-999', '\+\d{1,2}-(\d{3})((-\d+)+)',3) &! we'll see 15 on screen
+```
+
+```qsp title="Searching for number in string without number"
+STRPOS('Eight green apples in basket','\d+') &! 0 will be on screen
+```
+
+```qsp
+STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+)$', 0) &! 1
+STRPOS(' go to cave', '^(\S+)\s(\S+)\s(\S+)$', 0) &! 0
+STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+)$', 1)  &! 1
+STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+)$', 2)  &! 4
+STRPOS('go to cave', '^(\S+)\s(\S+)\s(\S+)$', 3)  &! 7
+STRPOS('go to cave', '^(\S+)\s(\S+)(\s(\S+))?$', 4) &! 7
+STRPOS('go to house', 'to\s(\S+)', 0) &! 4
+STRPOS('go to house', 'to\s(\S+)')    &! 4
+STRPOS('go to house', 'to\s(\S+)', 1) &! 7
+STRPOS('go to my house', 'to\s(\S+)', 1) &! 7
+```
+
+## VAL
+
+`VAL` — converts the specified digit string to corresponding number. General syntax:
+
+```qsp
+VAL([$expression])
+```
+
+, where `[$expression]` — any text string.
+
+The check takes into account the `-` sign at the beginning, adjacent spaces and tab characters, but if at least one character turns out not to be a digit, the function will return `0`. Also if `[$expression]` equals `''` (empty string), `0` is returned.
+
+Examples:
+
+```qsp
+apples = val($apples)
+
+val('123') & ! we'll see 123
+val('') & ! we'll see 0
+val('sand') & ! we'll see 0
+```
