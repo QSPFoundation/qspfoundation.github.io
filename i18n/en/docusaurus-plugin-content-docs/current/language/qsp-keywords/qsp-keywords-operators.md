@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Operations
+# Operators of operations
 
-List of operations for player version 5.8.0 in ascending order of priority:
+List of operators for player version 5.8.0 in ascending order of priority:
 
 - `OR`
 - `AND`
@@ -235,7 +235,7 @@ Examples:
 37+100 & ! returns 137
 ```
 
-When "adding" string values, [concatenation](qsp-keyword-operacion.md#-concatenation) is performed, i.e., "gluing" strings together:
+When "adding" string values, [concatenation](qsp-keywords-operators.md#-concatenation) is performed, i.e., "gluing" strings together:
 
 ```qsp
 ! the string "2627" will be output to screen
@@ -283,7 +283,7 @@ warrior = warrior + 15
 warrior += 15
 ```
 
-It's also possible to perform increment with string values, works like [concatenation](qsp-keyword-operacion.md#-concatenation):
+It's also possible to perform increment with string values, works like [concatenation](qsp-keywords-operators.md#-concatenation):
 
 ```qsp
 $text += " (maybe something is written here)"
@@ -1111,7 +1111,7 @@ Don't confuse with the command enumeration symbol:
 :::
 
 :::tip
-It's not recommended to use this operation for combining strings, since strings can be combined through [`+`](qsp-keyword-operacion.md#-addition):
+It's not recommended to use this operation for combining strings, since strings can be combined through [`+`](qsp-keywords-operators.md#-addition):
 
 ```qsp
 ! the string "2627" will be output to screen

@@ -2,11 +2,11 @@
 sidebar_position: 2
 ---
 
-# Operators
+# Statements
 
-## Implicit operator
+## Implicit statement
 
-The implicit operator is an operator that is not written in QSP code but outputs values to the screen. It is implied wherever an expression without an operator is present in a command. The implicit operator outputs values to the **Main Description Window** in the same way as if you used explicit specification of the `*pl` operator, i.e., it outputs the value and makes a line break. Examples:
+The implicit statement is an statement that is not written in QSP code but outputs values to the screen. It is implied wherever an expression without an statement is present in a command. The implicit statement outputs values to the **Main Description Window** in the same way as if you used explicit specification of the `*pl` statement, i.e., it outputs the value and makes a line break. Examples:
 
 ```qsp
 $AAA + '989'
@@ -17,7 +17,7 @@ $AAA + '989'
 $curloc & ! will output the location name to the screen
 ```
 
-Unlike the `*pl` operator, the implicit operator does not output an empty line with a line break to the screen if no value is passed to it. This means that if a function returns no value, the implicit operator is simply ignored. Example:
+Unlike the `*pl` statement, the implicit statement does not output an empty line with a line break to the screen if no value is passed to it. This means that if a function returns no value, the implicit statement is simply ignored. Example:
 
 ```qsp
 # start
@@ -34,7 +34,7 @@ local i = 0
 - foo
 ```
 
-In this case, the location-function `foo` returns nothing, so we will see two lines with the word "start" on the screen, with no empty lines between them, since the implicit operator in the lines with `$func` at location `start` will be simply ignored. Compare with:
+In this case, the location-function `foo` returns nothing, so we will see two lines with the word "start" on the screen, with no empty lines between them, since the implicit statement in the lines with `$func` at location `start` will be simply ignored. Compare with:
 
 ```qsp
 # start
@@ -53,15 +53,15 @@ local i=0
 
 ## `!` (comment)
 
-`!` — comment operator. What is in the line after the comment operator and until the end of the line is ignored by the interpreter. The comment operator allows you to "comment out" (disable) an unnecessary operator/function temporarily during game debugging. In addition, writing comments to program code is one of the signs of good programming style.
+`!` — comment statement. What is in the line after the comment statement and until the end of the line is ignored by the interpreter. The comment statement allows you to "comment out" (disable) an unnecessary statement/function temporarily during game debugging. In addition, writing comments to program code is one of the signs of good programming style.
 
-It is necessary to clearly understand that this is an operator, so if you are commenting some line of code, then `!` should come after `&`:
+It is necessary to clearly understand that this is an statement, so if you are commenting some line of code, then `!` should come after `&`:
 
 ```qsp
 *pl "Hello, world!" & ! comment
 ```
 
-Comments can be single-line, i.e., end on the same line where the comment operator is located:
+Comments can be single-line, i.e., end on the same line where the comment statement is located:
 
 ```qsp
 ! single-line comment
@@ -69,7 +69,7 @@ Comments can be single-line, i.e., end on the same line where the comment operat
 ```
 
 :::tip[Exception]
-The only exception to this rule is writing a comment after a colon in multi-line operators:
+The only exception to this rule is writing a comment after a colon in multi-line Statements:
 
 ```qsp
 act "Multi-line action": ! comment
@@ -79,7 +79,7 @@ end
 
 :::
 
-Comments can be multi-line. For this, after the comment operator, you need to write quotes, apostrophes, or curly braces. For example:
+Comments can be multi-line. For this, after the comment statement, you need to write quotes, apostrophes, or curly braces. For example:
 
 ```qsp
 ! "this is the first line of the comment
@@ -120,7 +120,7 @@ where `[$text]` is any text string, number, or expression of any type. If `[$tex
 
 ## `*P`
 
-`*P` — text output to the main description window without line break. Text output by any other operator immediately after `*p` will add new text immediately after the current text. General syntax:
+`*P` — text output to the main description window without line break. Text output by any other statement immediately after `*p` will add new text immediately after the current text. General syntax:
 
 ```qsp
 *P [$text]
@@ -152,7 +152,7 @@ where `[$text]` is any text string, number, or expression of any type. `[$text]`
 *pl "Text output, then line break."
 ```
 
-You can output text in the same way by simply writing the needed expression instead of this operator. For example, the lines:
+You can output text in the same way by simply writing the needed expression instead of this statement. For example, the lines:
 
 ```qsp
 *pl $AAA + '989'
@@ -181,20 +181,20 @@ will work identically.
 General syntax in single-line form:
 
 ```qsp
-ACT [$name], [$path to image file]: [operator] & [operator] & [operator]
+ACT [$name], [$path to image file]: [statement] & [statement] & [statement]
 ```
 
 General syntax in multi-line form:
 
 ```qsp
 ACT [$name], [$path to image file]:
-    [operator]
-    [operator]
-    [operator]
+    [statement]
+    [statement]
+    [statement]
 END
 ```
 
-A new action with name `[$name]` and image located at `[$path to image file]` is added to the actions list in the actions window. When the action is clicked, the specified operators are executed.
+A new action with name `[$name]` and image located at `[$path to image file]` is added to the actions list in the actions window. When the action is clicked, the specified Statements are executed.
 
 The `[$path to image file]` parameter can be absent, in which case the action is added without an image.
 
@@ -402,7 +402,7 @@ DEL OBJ [$name]
     DYNAMIC([$code], [argument 0], [argument 1], ... , [argument 18])
 ```
 
-where `[$code]` is regular QSP code written as text. Execution of such code is similar to executing `GOSUB` operator code. Arguments `[argument 0]`, `[argument 1]`, etc. can be used inside `[$code]`, their values are automatically placed in variables `args[0]`, `args[1]`, etc. respectively. After execution, old `args` parameters are restored, then code execution continues from the next command after `dynamic`.
+where `[$code]` is regular QSP code written as text. Execution of such code is similar to executing `GOSUB` statement code. Arguments `[argument 0]`, `[argument 1]`, etc. can be used inside `[$code]`, their values are automatically placed in variables `args[0]`, `args[1]`, etc. respectively. After execution, old `args` parameters are restored, then code execution continues from the next command after `dynamic`.
 
 Examples:
 
@@ -416,7 +416,7 @@ dynamic "
 ", 'Text', 'Fork'
 ```
 
-The following information is also true for the [`dyneval`](qsp-keyword-functions.md#dyneval) function.
+The following information is also true for the [`dyneval`](qsp-keywords-functions.md#dyneval) function.
 
 **Important!** If code is specified using apostrophes (`''`) or quotes (`""`), sub-expressions are evaluated in the text:
 
@@ -467,14 +467,14 @@ end
 ```
 
 :::warning[Attention!!!]
-In players version 5.8.0, the `loop` operator appeared.
+In players version 5.8.0, the `loop` statement appeared.
 
-The loop body is also considered a separate code block, but the `exit` operator interrupts not only the loop itself, but also the code block in which the loop is located.
+The loop body is also considered a separate code block, but the `exit` statement interrupts not only the loop itself, but also the code block in which the loop is located.
 :::
 
 ## FREELIB
 
-`FREELIB` — removes all locations added with the `inclib` operator.
+`FREELIB` — removes all locations added with the `inclib` statement.
 
 :::note[5.7.0]
 In older player versions, the command was called `dellib` and `killqst`.
@@ -492,7 +492,7 @@ GOSUB [$location],[argument 0],[argument 1], ... ,[argument 8]
 
 where `[$location]` is the name of the location whose code we want to execute without directly going to it. Arguments `[argument 0]`, `[argument 1]`, etc. can be used on this location, their values are automatically placed in variables `args[0]`, `args[1]`, etc. respectively. After processing the location, previous `args` values are restored. Using arguments is not mandatory.
 
-When accessing a location via `gosub`, the base description of the location is added to the current description, base actions are added to current actions, and operators in the "Execute on visit" field are executed, then return to the original line (continuing code execution after `gosub`).
+When accessing a location via `gosub`, the base description of the location is added to the current description, base actions are added to current actions, and Statements in the "Execute on visit" field are executed, then return to the original line (continuing code execution after `gosub`).
 
 Examples of calling locations via `gosub`:
 
@@ -526,7 +526,7 @@ end
 - transition
 ```
 
-The operator has a short form `gs`:
+The statement has a short form `gs`:
 
 ```qsp
 GS [$location], [argument 0], [argument 1], ... , [argument 18]
@@ -557,7 +557,7 @@ goto 'house'
 goto 'street',1,'data'
 ```
 
-The operator has a short form `gt`:
+The statement has a short form `gt`:
 
 ```qsp
 GT [$location],[argument 0],[argument 1], ... ,[argument 8]
@@ -565,7 +565,7 @@ GT [$location],[argument 0],[argument 1], ... ,[argument 8]
 
 ## IF
 
-`IF` — the main operator for writing conditional constructions. Constructions written using this operator (let's call them "simple conditions") have two forms: single-line and multi-line, and generally look like this:
+`IF` — the main statement for writing conditional constructions. Constructions written using this statement (let's call them "simple conditions") have two forms: single-line and multi-line, and generally look like this:
 
 General form:
 
@@ -583,7 +583,7 @@ END
 
 In this case, if condition `[#expression]` is true, commands `{command 1}`, `{command 2}`, etc. are executed.
 
-- For **single-line form**, these will be only those commands that are on the same line as the `IF` operator until the end of the line;
+- For **single-line form**, these will be only those commands that are on the same line as the `IF` statement until the end of the line;
 - and for **multi-line form**, these will be those commands that are in subsequent lines after the colon and until the special keyword `END`.
 
 Comparison operations, logical operations, and other expressions returning numeric values can serve as conditions.
@@ -619,7 +619,7 @@ end
 
 :::warning[Pay attention!!!]
 
-In multi-line form, after the colon on the same line where the IF operator is located, there should be no commands, otherwise the player will consider such a conditional operator single-line, and commands in subsequent lines will be executed in any case, regardless of whether the condition turns out to be true or not. Example of such erroneous notation:
+In multi-line form, after the colon on the same line where the IF statement is located, there should be no commands, otherwise the player will consider such a conditional statement single-line, and commands in subsequent lines will be executed in any case, regardless of whether the condition turns out to be true or not. Example of such erroneous notation:
 
 ```qsp
 if library = 0: learned_about_party = 0
@@ -628,7 +628,7 @@ if library = 0: learned_about_party = 0
 end &! the end keyword is simply ignored
 ```
 
-The exception is the comment operator written after the colon:
+The exception is the comment statement written after the colon:
 
 ```qsp
 if library = 0: ! if haven't visited library
@@ -703,10 +703,10 @@ if abcd=3: k1=34 else k1=25 end
 
 ## ELSE
 
-`ELSE` — keyword used together with the `IF` operator, which serves to provide an alternative if the condition is not met. The `ELSE` keyword also has two forms: single-line and multi-line.
+`ELSE` — keyword used together with the `IF` statement, which serves to provide an alternative if the condition is not met. The `ELSE` keyword also has two forms: single-line and multi-line.
 
-- Multi-line form of `ELSE` can only be used in multi-line construction of the `IF` operator,
-- single-line form can be used both in single-line and multi-line constructions of the `IF` operator. General form:
+- Multi-line form of `ELSE` can only be used in multi-line construction of the `IF` statement,
+- single-line form can be used both in single-line and multi-line constructions of the `IF` statement. General form:
 
 ```qsp
 ! single-line form
@@ -795,10 +795,10 @@ end
 
 ## ELSEIF
 
-`ELSEIF` — keyword used together with the `IF` operator and allows defining sequentially-exclusive conditions at one nesting level. Has single-line and multi-line forms.
+`ELSEIF` — keyword used together with the `IF` statement and allows defining sequentially-exclusive conditions at one nesting level. Has single-line and multi-line forms.
 
-- Multi-line form can only be used in multi-line constructions with the `IF` operator,
-- single-line form can be used in both multi-line and single-line constructions with the `IF` operator.
+- Multi-line form can only be used in multi-line constructions with the `IF` statement,
+- single-line form can be used in both multi-line and single-line constructions with the `IF` statement.
 
 General forms:
 
@@ -835,7 +835,7 @@ This works as follows. If `[#expression 1]` is true, commands `{command set 1}` 
 Features of `ELSEIF` notation:
 
 - The variant `ELSE IF` can be used. Works exactly the same.
-- If in multi-line `IF` construction after `ELSEIF` operators are on the same line (single-line form), then all subsequent lines are ignored until the next `ELSEIF`, or until `ELSE` or `END`.
+- If in multi-line `IF` construction after `ELSEIF` Statements are on the same line (single-line form), then all subsequent lines are ignored until the next `ELSEIF`, or until `ELSE` or `END`.
 - In `IF` construction with `ELSEIF`, the part with `ELSE` can be either present or absent.
 
 Examples:
@@ -860,7 +860,7 @@ elseif money mod 10=0 or money mod 10>4 or (money mod 100>10 and money mod 100<2
 end
 ```
 
-Example of `ELSEIF` notation with operators on the same line:
+Example of `ELSEIF` notation with Statements on the same line:
 
 ```qsp
 ! implementing switch/case in QSP
@@ -875,7 +875,7 @@ end
 
 :::tip[Note:]
 
-For better code readability, it's recommended to use constructions with `elseif` only in multi-line form of the `if` operator.
+For better code readability, it's recommended to use constructions with `elseif` only in multi-line form of the `if` statement.
 
 :::
 
@@ -909,7 +909,7 @@ In older player versions, the command was called `addqst` and `addlib`.
 JUMP [$label]
 ```
 
-where `[$label]` is a label below or above in the code (see section ["Labels"](qsp-keyword-syntaxems.md#labels-)).
+where `[$label]` is a label below or above in the code (see section ["Labels"](qsp-keywords-syntaxems.md#labels-)).
 
 `jump` finds a label only within the current code block, i.e., labels are local.
 
@@ -930,7 +930,7 @@ p 'But this message the user will see'
 ```
 
 :::note[5.7.0]
-Using the `jump` operator in older player versions, you could organize loops:
+Using the `jump` statement in older player versions, you could organize loops:
 
 ```qsp
 :loop
@@ -959,7 +959,7 @@ if y<9:
 end
 ```
 
-Starting from version 5.8.0, the `loop` operator was introduced for loops.
+Starting from version 5.8.0, the `loop` statement was introduced for loops.
 :::
 
 ## KILLALL
@@ -1013,7 +1013,7 @@ KILLVAR [$array name], [element index]
 
 where `[$array name]` is the name of the array from which we want to remove an element, and `[element index]` is the number, text index, or multi-dimensional index of the array element we want to remove. Array element numbering starts from 0.
 
-If the element index is not specified, the entire array is cleared. If the operator is called without arguments, all variables and arrays are deleted.
+If the element index is not specified, the entire array is cleared. If the statement is called without arguments, all variables and arrays are deleted.
 
 Examples:
 
@@ -1043,10 +1043,11 @@ KILLVAR 'a', 1
 
 ## LET
 
-`LET` — deprecated operator for setting variable value. General syntax:
+`LET` — deprecated statement for setting variables values. General syntax:
 
 ```qsp
 LET [variable name] = [expression]
+LET [variable 1], [variable 2], ... = [value 1], [value 2], ...
 ```
 
 where `[variable name]` is a valid variable name, `[expression]` is a valid value for this variable.
@@ -1064,13 +1065,17 @@ let $text = "text string"
 let abs = 123
 ! set tuple
 let %tuple = [123, "text string"]
+! multiple assignment
+let unit_power, $unit_name = 1300, 'DiggerBull'
+! unpack the tuple
+let $name, age, height = %npc_fields
 ```
 
 :::tip
-This operator is considered deprecated. Use the `set` operator instead, and only in cases when it improves code readability.
+This statement is considered deprecated. Use the `set` statement instead, and only in cases when it improves code readability.
 
 ```qsp
-! assignment can be done without set or let operators:
+! assignment can be done without set or let Statements:
 $text = "text string"
 ```
 
@@ -1101,7 +1106,7 @@ local i, j = %map_cell
 local z, $a = [13, '37']
 ```
 
-Unlike `set` and `let` operators, you can declare a variable but not assign it a value.
+Unlike `set` and `let` Statements, you can declare a variable but not assign it a value.
 
 ```qsp
 local tempora
@@ -1118,10 +1123,10 @@ local arr
 You can create your own local variables in the following code blocks:
 
 - Locations themselves.
-- Code passed to the `DYNAMIC` operator or `DYNEVAL` function as text.
+- Code passed to the `DYNAMIC` statement or `DYNEVAL` function as text.
 - Code executed when clicking on a hyperlink.
-- Code of each separate Action ([ACT](qsp-keyword-operators.md#act)).
-- Code of each separate Loop ([LOOP](qsp-keyword-operators.md#loop))
+- Code of each separate Action ([ACT](qsp-keywords-statements.md#act)).
+- Code of each separate Loop ([LOOP](qsp-keywords-statements.md#loop))
 
 :::warning[**Attention!**]
 Local variables have one feature that needs to be very clearly understood. The value of a local variable declared in a given code block is translated to all nested or called code blocks from this one. For example, if a local variable is declared on a location, its value is translated to all locations called using `GOSUB` or `FUNC`, to code blocks for `DYNAMIC`/`DYNEVAL`, to loop blocks, and so on. Example:
@@ -1237,17 +1242,17 @@ end
 
 ## LOOP
 
-`LOOP` — loop operator. Necessary for organizing cyclic calculations. General syntax of single-line form:
+`LOOP` — loop statement. Necessary for organizing cyclic calculations. General syntax of single-line form:
 
 ```qsp
-LOOP {commands before loop start} WHILE [condition] STEP {commands at end of iteration}: {loop body operators}
+LOOP {commands before loop start} WHILE [condition] STEP {commands at end of iteration}: {loop body Statements}
 ```
 
 General syntax of multi-line form:
 
 ```qsp
 LOOP {commands before loop start} WHILE [condition] STEP {commands at end of iteration}:
-    {loop body operators}
+    {loop body Statements}
 END
 ```
 
@@ -1256,7 +1261,7 @@ where:
 - `{commands before loop start}` — these are commands executed before the loop is started. These commands belong to the loop block but don't fall into iterations (passes), i.e., are executed only once. Here you can, for example, declare a loop counter. And here you can write multiple commands, listing them with the `&` (ampersand) separator.
 - `[condition]` — this is an expression by whose value the condition is checked. Comparison operations and logical operations in any combinations can be used here. If the value of expression `[condition]` equals zero, the loop is interrupted.
 - `{commands at end of iteration}` — these are commands executed at the end of each loop pass. Commands that don't directly relate to the loop body but nevertheless should be executed on each iteration can be placed here. Here you can, for example, change the loop counter value. And here you can actually write multiple commands, listing them with the `&` (ampersand) separator.
-- `{loop body operators}` — these are commands that need to be executed on each pass and are the main ones for the loop. I.e., we make the loop specifically for these commands.
+- `{loop body Statements}` — these are commands that need to be executed on each pass and are the main ones for the loop. I.e., we make the loop specifically for these commands.
 
 The loop in QSP is a separate code block, which means we can declare local variables inside this code block. This is very convenient because we can declare a local variable for the counter, and this won't affect other variables at the location:
 
@@ -1288,7 +1293,7 @@ end
 MENU [$array name]
 ```
 
-Before using this operator, you need to fill the array based on whose contents the menu items will be formed. Menu items are tuples of three values, sequentially placed in consecutive array cells starting from zero. The contents of each tuple should be approximately like this:
+Before using this statement, you need to fill the array based on whose contents the menu items will be formed. Menu items are tuples of three values, sequentially placed in consecutive array cells starting from zero. The contents of each tuple should be approximately like this:
 
 ```qsp
 ["menu item name", "location name", "path to icon file"]
@@ -1306,7 +1311,7 @@ Knowing this, we can fill the array to create our menu items:
 
 Here the array name (`%stone`) is the menu name, and the tuples are actions for which item names and handler location names for menu item selection are specified. When selecting the "Take stone" item, the location named "takestone" will be called. Similarly for other items.
 
-To display the menu on screen, use the `MENU` operator:
+To display the menu on screen, use the `MENU` statement:
 
 ```qsp
 menu '%stone'
@@ -1397,7 +1402,7 @@ $stone[2]='Examine stone:lookstone'
 
 Here the array name (`$stone`) is the menu name, and the text array values are actions for which names and handler location names for menu item selection are specified. When selecting "Take stone", the location named "takestone" will be processed. Similarly for other items.
 
-To call the menu on screen, use the `menu` operator:
+To call the menu on screen, use the `menu` statement:
 
 ```qsp
 menu '$stone'
@@ -1513,7 +1518,7 @@ opengame "1.sav"
 opengame
 ```
 
-See also the game state loading event handler location ([$ongload](qsp-keyword-sys-var.md#ongload)).
+See also the game state loading event handler location ([$ongload](qsp-keywords-sys-var.md#ongload)).
 
 ## OPENQST
 
@@ -1529,7 +1534,7 @@ where [$path] is the path to the game file to be run. Example:
 openqst "gamespool/cubesgame.qsp"
 ```
 
-When using this operator, variables are not deleted, inventory objects are not removed, the additional description and input line are not cleared, and playing files are not stopped. If you need to clear the screen and all variable values, you can write such commands at the beginning of the loaded game file:
+When using this statement, variables are not deleted, inventory objects are not removed, the additional description and input line are not cleared, and playing files are not stopped. If you need to clear the screen and all variable values, you can write such commands at the beginning of the loaded game file:
 
 ```qsp
 killall & cls & close all
@@ -1537,7 +1542,7 @@ killall & cls & close all
 
 ## P
 
-`P` — text output to the additional description window without line break. Text output by any other operator immediately after p will add new text immediately after the current text. General syntax:
+`P` — text output to the additional description window without line break. Text output by any other statement immediately after p will add new text immediately after the current text. General syntax:
 
 ```qsp
 P [$text]
@@ -1606,7 +1611,7 @@ If the file is already playing, the volume changes without "restarting" it. Mult
 
 `REFINT` — forced interface update (including color and font changes assigned using system variables).
 
-By default, interface update occurs 2 times per second (every 500 ms). See also the [`settimer`](#settimer) operator.
+By default, interface update occurs 2 times per second (every 500 ms). See also the [`settimer`](#settimer) statement.
 
 ## SAVEGAME
 
@@ -1627,7 +1632,7 @@ savegame "1.sav"
 savegame
 ```
 
-See also [game state save event handler location ($ongsave)](qsp-keyword-sys-var.md#ongsave).
+See also [game state save event handler location ($ongsave)](qsp-keywords-sys-var.md#ongsave).
 
 ## SCANSTR
 
@@ -1660,10 +1665,11 @@ scanstr '$words', $text, '\[(.*?)\]', 1
 
 ## SET
 
-`SET` — operator for setting variable value. General syntax:
+`SET` — statement for setting variables values. General syntax:
 
 ```qsp
 SET [variable name] = [expression]
+SET [variable 1], [variable 2], ... = [value 1], [value 2], ...
 ```
 
 where `[variable name]` is a valid variable name, `[expression]` is a valid value for this variable.
@@ -1677,10 +1683,14 @@ set $text = "text string"
 set abs = 123
 ! set tuple
 set %tuple = [27, 184, 'steel']
+! multiple assignment
+set unit_power, $unit_name = 1300, 'DiggerBull'
+! unpack the tuple
+set $name, age, height = %npc_fields
 ```
 
 :::note[Recommendation:]
-Since assignment can be done without the `set` operator, we recommend using this operator only for cases when it improves code readability. For example, with multiple assignment:
+Since assignment can be done without the `set` statement, we recommend using this statement only for cases when it improves code readability. For example, with multiple assignment:
 
 ```qsp
 set apples_in_pocket, apples_in_basket, apples_at_Lyosha = 58, 11, 19
@@ -1888,7 +1898,7 @@ where `[$array_name]` is the array where we want to place the unpacked values; `
 
 Tuple element indexing starts from `0`.
 
-The operator allows making tuple slices, including slices of one element. I.e., using this operator we can extract a separate element from a tuple without using a loop.
+The statement allows making tuple slices, including slices of one element. I.e., using this statement we can extract a separate element from a tuple without using a loop.
 
 Examples:
 
@@ -1909,7 +1919,7 @@ UNPACKARR 'A', %tpl, 3, 1
 
 `UNSELECT` — canceling object selection. Has a short form `unsel`.
 
-When a player clicks on any object, it remains selected. To remove selection from an object, use this operator. Usually it's placed on the object selection handler location.
+When a player clicks on any object, it remains selected. To remove selection from an object, use this statement. Usually it's placed on the object selection handler location.
 
 ```qsp
 if $selobj='Orange':
@@ -1965,10 +1975,10 @@ wait 5000
 ```
 
 :::warning[Caution!]
-This operator should be used with caution, since pausing code execution blocks the player's ability to interact with the game.
+This statement should be used with caution, since pausing code execution blocks the player's ability to interact with the game.
 :::
 
-`WAIT` not only interrupts code execution but also forces the player to output information from the screen buffer. During normal location code execution, all text for operators `*pl`, `*p` `pl`, `nl`, etc. is placed in a special screen buffer, and only after executing all code on the location is it output to the screen. When using `WAIT`, text from the buffer is output immediately at the moment `WAIT` is executed, which is sometimes useful because it allows tracking changes in some values step by step.
+`WAIT` not only interrupts code execution but also forces the player to output information from the screen buffer. During normal location code execution, all text for Statements `*pl`, `*p` `pl`, `nl`, etc. is placed in a special screen buffer, and only after executing all code on the location is it output to the screen. When using `WAIT`, text from the buffer is output immediately at the moment `WAIT` is executed, which is sometimes useful because it allows tracking changes in some values step by step.
 
 In the example below, numbers will first be written to the screen buffer and only then appear on screen:
 
@@ -2016,7 +2026,7 @@ xgoto 'house'
 xgoto 'street', 1, 'data'
 ```
 
-The operator has a short form `xgt`:
+The statement has a short form `xgt`:
 
 ```qsp
 XGT [$location], [argument 0], [argument 1], ... , [argument 18]
