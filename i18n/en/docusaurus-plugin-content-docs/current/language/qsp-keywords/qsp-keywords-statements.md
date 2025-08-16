@@ -416,7 +416,7 @@ dynamic "
 ", 'Text', 'Fork'
 ```
 
-The following information is also true for the [`dyneval`](qsp-keyword-functions.md#dyneval) function.
+The following information is also true for the [`dyneval`](qsp-keywords-functions.md#dyneval) function.
 
 **Important!** If code is specified using apostrophes (`''`) or quotes (`""`), sub-expressions are evaluated in the text:
 
@@ -909,7 +909,7 @@ In older player versions, the command was called `addqst` and `addlib`.
 JUMP [$label]
 ```
 
-where `[$label]` is a label below or above in the code (see section ["Labels"](qsp-keyword-syntaxems.md#labels-)).
+where `[$label]` is a label below or above in the code (see section ["Labels"](qsp-keywords-syntaxems.md#labels-)).
 
 `jump` finds a label only within the current code block, i.e., labels are local.
 
@@ -1518,7 +1518,7 @@ opengame "1.sav"
 opengame
 ```
 
-See also the game state loading event handler location ([$ongload](qsp-keyword-sys-var.md#ongload)).
+See also the game state loading event handler location ([$ongload](qsp-keywords-sys-var.md#ongload)).
 
 ## OPENQST
 
@@ -1632,7 +1632,7 @@ savegame "1.sav"
 savegame
 ```
 
-See also [game state save event handler location ($ongsave)](qsp-keyword-sys-var.md#ongsave).
+See also [game state save event handler location ($ongsave)](qsp-keywords-sys-var.md#ongsave).
 
 ## SCANSTR
 

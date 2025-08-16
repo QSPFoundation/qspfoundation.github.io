@@ -119,7 +119,7 @@ dyneval("code = 123 + 890")
 code
 ```
 
-См. также [оператор `DYNAMIC`](qsp-keyword-statements.md#dynamic).
+См. также [оператор `DYNAMIC`](qsp-keywords-statements.md#dynamic).
 
 ## `$FUNC`
 
@@ -211,7 +211,7 @@ $name_loc = "summ"
 *pl func($name_loc, 23) & ! выведет на экран 276
 ```
 
-Также см. ["Неявный вызов функции `FUNC`"](qsp-keyword-syntaxems.md#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D1%8D%D1%82-).
+Также см. ["Неявный вызов функции `FUNC`"](qsp-keywords-syntaxems.md#%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D1%8D%D1%82-).
 
 ## `$GETOBJ`
 
@@ -563,13 +563,13 @@ act "Съесть яблоко":
 end
 ```
 
-Так же смотрите примеры использования в разделе [`$onactsel`](qsp-keyword-sys-var.md#onactsel)
+Так же смотрите примеры использования в разделе [`$onactsel`](qsp-keywords-sys-var.md#onactsel)
 
 ## `$SELOBJ`
 
 `$SELOBJ` —  возвращает название выделенного предмета в любом месте игры. Выделение предмета происходит в момент нажатия (щелчка мышью по предмету) и не снимается до применения команды `unselect`.
 
-Пример использования можно посмотреть в разделе [`$onobjsel`](qsp-keyword-sys-var.md#onobjsel)
+Пример использования можно посмотреть в разделе [`$onobjsel`](qsp-keywords-sys-var.md#onobjsel)
 
 ## `$STATTXT`
 
@@ -718,7 +718,7 @@ $ucase('Я хочу на вас орать.') & ! вернёт 'Я ХОЧУ НА
 act "Что я написал?": pl 'Я написал: "<<$user_text>>".'
 ```
 
-Более распространённый пример представлен в разделе [`$usercom`](qsp-keyword-sys-var.md#usercom).
+Более распространённый пример представлен в разделе [`$usercom`](qsp-keywords-sys-var.md#usercom).
 
 ## ARRCOMP
 

@@ -211,7 +211,7 @@ $name_loc = "summ"
 *pl func($name_loc, 23) & ! will output 276 to screen
 ```
 
-Also see ["Implicit `FUNC` function call"](qsp-keyword-syntaxems#commercial-at-symbol-).
+Also see ["Implicit `FUNC` function call"](qsp-keywords-syntaxems#commercial-at-symbol-).
 
 ## `$GETOBJ`
 
@@ -561,13 +561,13 @@ act "Eat apple":
 end
 ```
 
-Also see usage examples in the [`$onactsel`](qsp-keyword-sys-var.md#onactsel) section
+Also see usage examples in the [`$onactsel`](qsp-keywords-sys-var.md#onactsel) section
 
 ## `$SELOBJ`
 
 `$SELOBJ` — returns the name of the selected object anywhere in the game. Object selection occurs when clicking (mouse click on object) and is not removed until the `unselect` command is applied.
 
-Usage examples can be found in the [`$onobjsel`](qsp-keyword-sys-var.md#onobjsel) section
+Usage examples can be found in the [`$onobjsel`](qsp-keywords-sys-var.md#onobjsel) section
 
 ## `$STATTXT`
 
@@ -716,7 +716,7 @@ Example of an action that will output text entered in the input line to the addi
 act "What did I write?": pl 'I wrote: "<<$user_text>>".'
 ```
 
-A more common example is presented in the [`$usercom`](qsp-keyword-sys-var.md#usercom) section.
+A more common example is presented in the [`$usercom`](qsp-keywords-sys-var.md#usercom) section.
 
 ## ARRCOMP
 
