@@ -925,6 +925,7 @@ ARRPOS([#start], [$array_name], [$pattern])
 ## ARRTYPE
 
 `ARRTYPE` — returns the type of value stored in a variable or specified array cell. The type is returned as one of the following values:
+
 - `''` (empty string) — value not defined (for example, for uninitialized variables);
 - `'#'` — variable contains number;
 - `'$'` — variable contains string;
