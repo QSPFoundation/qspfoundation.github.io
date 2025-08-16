@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Syntaxemes and Special Characters
 
-:::tips[Definition]
+:::tip[Definition]
 
 In the context of programming, a syntaxeme can be considered as a **minimal unit of syntax** that defines the structure and rules for writing code.
 
