@@ -119,7 +119,7 @@ dyneval("code = 123 + 890")
 code
 ```
 
-См. также [оператор `DYNAMIC`](qsp-keyword-operators.md#dynamic).
+См. также [оператор `DYNAMIC`](qsp-keyword-statements.md#dynamic).
 
 ## `$FUNC`
 

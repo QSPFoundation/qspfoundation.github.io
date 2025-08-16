@@ -91,7 +91,7 @@ end presence of this text after end is not recommended & *pl "New command"
 
 ## Labels `:`
 
-Labels are special syntactic constructs (or rather, less than constructs — syntaxemes) that mark a specified line of code and serve for quick movement to such lines using the [`JUMP`](qsp-keyword-operators.md#jump) operator. General syntax:
+Labels are special syntactic constructs (or rather, less than constructs — syntaxemes) that mark a specified line of code and serve for quick movement to such lines using the [`JUMP`](qsp-keywords-statements.md#jump) operator. General syntax:
 
 ```qsp
 :[label name]
@@ -164,7 +164,7 @@ Random labels, i.e., labels that have no jump to them via `jump` in the current 
 [command 1] & [command 2] & ...
 ```
 
-This symbol should not be confused with the [string concatenation operation](qsp-keyword-operacion.md#-concatenation), and should be used carefully.
+This symbol should not be confused with the [string concatenation operation](qsp-keywords-operators.md#-concatenation), and should be used carefully.
 
 Examples:
 
@@ -455,7 +455,7 @@ end
 Implicit location-function calling replaces both `gosub` and `func`, therefore:
 
 1. if your location-function returns a result, implicit calling of such a location will work exactly the same as explicit calling through `func`;
-2. if the location-function doesn't return a result, then when using it with the **[implicit operator](qsp-keyword-operators.md#implicit-operator)** it will work like explicit calling through `gosub`.
+2. if the location-function doesn't return a result, then when using it with the **[implicit operator](qsp-keywords-statements.md#implicit-operator)** it will work like explicit calling through `gosub`.
 
 :::
 
