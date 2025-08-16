@@ -1043,10 +1043,11 @@ KILLVAR 'a', 1
 
 ## LET
 
-`LET` — deprecated operator for setting variable value. General syntax:
+`LET` — deprecated operator for setting variables values. General syntax:
 
 ```qsp
 LET [variable name] = [expression]
+LET [variable 1], [variable 2], ... = [value 1], [value 2], ...
 ```
 
 where `[variable name]` is a valid variable name, `[expression]` is a valid value for this variable.
@@ -1064,6 +1065,10 @@ let $text = "text string"
 let abs = 123
 ! set tuple
 let %tuple = [123, "text string"]
+! multiple assignment
+let unit_power, $unit_name = 1300, 'DiggerBull'
+! unpack the tuple
+let $name, age, height = %npc_fields
 ```
 
 :::tip
@@ -1660,10 +1665,11 @@ scanstr '$words', $text, '\[(.*?)\]', 1
 
 ## SET
 
-`SET` — operator for setting variable value. General syntax:
+`SET` — operator for setting variables values. General syntax:
 
 ```qsp
 SET [variable name] = [expression]
+SET [variable 1], [variable 2], ... = [value 1], [value 2], ...
 ```
 
 where `[variable name]` is a valid variable name, `[expression]` is a valid value for this variable.
@@ -1677,6 +1683,10 @@ set $text = "text string"
 set abs = 123
 ! set tuple
 set %tuple = [27, 184, 'steel']
+! multiple assignment
+set unit_power, $unit_name = 1300, 'DiggerBull'
+! unpack the tuple
+set $name, age, height = %npc_fields
 ```
 
 :::note[Recommendation:]
