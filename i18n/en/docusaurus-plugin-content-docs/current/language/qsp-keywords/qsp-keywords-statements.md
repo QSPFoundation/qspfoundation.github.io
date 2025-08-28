@@ -236,11 +236,13 @@ ADDOBJ [$name], [$path to image file], [#position]
 
 where `[$name]` is the object name, `[$path to image file]` is the path to the object's image file (displayed next to the object name), and `[#position]` is the position in the inventory where the object is added. The `[#position]` parameter can be absent. By default, objects are added to the end of the list. Object numbering in the inventory starts from `1`. The `[$path to image file]` parameter can be absent, default value is `''`, in which case the object is added without an image.
 
-:::note[Allowed but not recommended, deprecated form:]
+:::warning[Deprecated form:]
 
 ```qsp
 ADD OBJ [$name],[$path to image file],[#index]
 ```
+
+**Do not use this form. Support for it will be removed in future player versions.**
 
 :::
 
@@ -357,11 +359,13 @@ delact 'Go forward'
 delact $selact
 ```
 
-:::note[Allowed but not recommended, deprecated form:]
+:::warning[Deprecated form:]
 
 ```qsp
 DEL ACT [$name]
 ```
+
+**Do not use this form. Support for it will be removed in future player versions.**
 
 :::
 
@@ -386,11 +390,13 @@ delobj "Screwdriver"
 delobj $selobj
 ```
 
-:::note[Allowed but not recommended, deprecated form:]
+:::warning[Deprecated form:]
 
 ```qsp
 DEL OBJ [$name]
 ```
+
+**Do not use this form. Support for it will be removed in future player versions.**
 
 :::
 
