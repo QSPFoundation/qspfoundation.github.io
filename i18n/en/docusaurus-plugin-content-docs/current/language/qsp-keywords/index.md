@@ -21,7 +21,7 @@ Crossed out commands do not work in players version 5.8.0 and above.
 - [`{}` (Curly braces)](qsp-keywords-syntaxems.md#curly-braces-)
 - [`()` (round brackets)](qsp-keywords-syntaxems.md#round-brackets-)
 - [`[]` (square brackets)](qsp-keywords-syntaxems.md#square-brackets-)
-- [`@` (commercial "at")](qsp-keywords-syntaxems#commercial-at-symbol-) - 5.8.0
+- [`@` (commercial "at")](qsp-keywords-syntaxems#the-commercial-at-symbol-) - 5.8.0
 - [`$` (dollar sign)](qsp-keywords-syntaxems#dollar-sign-symbol-)
 - [`%` (percent sign)](qsp-keywords-syntaxems#percent-sign-symbol-) - 5.9.0
 - [`*`](qsp-keywords-operators.md#-multiplication)
