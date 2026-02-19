@@ -455,7 +455,7 @@ end
 Implicit location-function calling replaces both `gosub` and `func`, therefore:
 
 1. if your location-function returns a result, implicit calling of such a location will work exactly the same as explicit calling through `func`;
-2. if the location-function doesn't return a result, then when using it with the **[implicit operator](qsp-keywords-statements.md#implicit-operator)** it will work like explicit calling through `gosub`.
+2. if the location-function doesn't return a result, then when using it with the **[implicit statement](qsp-keywords-statements.md#implicit-statement)** it will work like explicit calling through `gosub`.
 
 :::
 
