@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Указатель
 
-:::warning[Внимание!]
+:::warning [Внимание!]
 Вычеркнутые команды не работают в плеерах версии 5.8.0 и выше.
 :::
 
@@ -121,6 +121,7 @@ sidebar_position: 6
 - [`$MID`](qsp-keywords-functions.md#mid)
 - [`MIN`](qsp-keywords-functions.md#min)
 - [`MOD`](qsp-keywords-operators.md#mod)
+- [`MODOBJ`](qsp-keywords-statements.md#modobj) - 5.9.4
 - [`MSECSCOUNT`](qsp-keywords-functions.md#msecscount)
 - [`MSG`](qsp-keywords-statements.md#msg)
 - [`NL`](qsp-keywords-statements.md#nl-1)
@@ -147,6 +148,7 @@ sidebar_position: 6
 - [`RAND`](qsp-keywords-functions.md#rand)
 - [`REFINT`](qsp-keywords-statements.md#refint)
 - [`$REPLACE`](qsp-keywords-functions.md#replace)
+- [`RESETOBJ`](qsp-keywords-statements.md#resetobj) - 5.9.4
 - [`RESULT`](qsp-keywords-sys-var.md#result)
 - [`RGB`](qsp-keywords-functions.md#rgb)
 - [`RND`](qsp-keywords-functions.md#rnd)

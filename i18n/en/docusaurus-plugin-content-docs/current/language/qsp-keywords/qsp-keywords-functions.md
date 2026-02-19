@@ -211,7 +211,7 @@ $name_loc = "summ"
 *pl func($name_loc, 23) & ! will output 276 to screen
 ```
 
-Also see ["Implicit `FUNC` function call"](qsp-keywords-syntaxems#commercial-at-symbol-).
+Also see ["Implicit `FUNC` function call"](qsp-keywords-syntaxems#the-commercial-at-symbol-).
 
 ## `$GETOBJ`
 

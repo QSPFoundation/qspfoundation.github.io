@@ -9,7 +9,7 @@ sidebar_position: 6
 Crossed out commands do not work in players version 5.8.0 and above.
 :::
 
-- [Implicit statement](qsp-keywords-statements#implicit-operator)
+- [Implicit statement](qsp-keywords-statements#implicit-statement)
 - [`!` (comment)](qsp-keywords-statements.md#-comment)
 - [`!` (not equal)](qsp-keywords-operators.md#-not-equal-1)
 - [`&` (concatenation)](qsp-keywords-operators.md#-concatenation)
@@ -21,7 +21,7 @@ Crossed out commands do not work in players version 5.8.0 and above.
 - [`{}` (Curly braces)](qsp-keywords-syntaxems.md#curly-braces-)
 - [`()` (round brackets)](qsp-keywords-syntaxems.md#round-brackets-)
 - [`[]` (square brackets)](qsp-keywords-syntaxems.md#square-brackets-)
-- [`@` (commercial "at")](qsp-keywords-syntaxems#commercial-at-symbol-) - 5.8.0
+- [`@` (commercial "at")](qsp-keywords-syntaxems#the-commercial-at-symbol-) - 5.8.0
 - [`$` (dollar sign)](qsp-keywords-syntaxems#dollar-sign-symbol-)
 - [`%` (percent sign)](qsp-keywords-syntaxems#percent-sign-symbol-) - 5.9.0
 - [`*`](qsp-keywords-operators.md#-multiplication)
@@ -121,6 +121,7 @@ Crossed out commands do not work in players version 5.8.0 and above.
 - [`$MID`](qsp-keywords-functions.md#mid)
 - [`MIN`](qsp-keywords-functions.md#min)
 - [`MOD`](qsp-keywords-operators.md#mod)
+- [`MODOBJ`](qsp-keywords-statements.md#modobj) - 5.9.4
 - [`MSECSCOUNT`](qsp-keywords-functions.md#msecscount)
 - [`MSG`](qsp-keywords-statements.md#msg)
 - [`NL`](qsp-keywords-statements.md#nl-1)
@@ -147,6 +148,7 @@ Crossed out commands do not work in players version 5.8.0 and above.
 - [`RAND`](qsp-keywords-functions.md#rand)
 - [`REFINT`](qsp-keywords-statements.md#refint)
 - [`$REPLACE`](qsp-keywords-functions.md#replace)
+- [`RESETOBJ`](qsp-keywords-statements.md#resetobj) - 5.9.4
 - [`RESULT`](qsp-keywords-sys-var.md#result)
 - [`RGB`](qsp-keywords-functions.md#rgb)
 - [`RND`](qsp-keywords-functions.md#rnd)

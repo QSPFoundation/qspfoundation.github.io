@@ -1455,6 +1455,108 @@ $usr_menu[3] = 'Put item:put_item'
 
 :::
 
+## MODOBJ
+
+:::warning [Attention!]
+This chapter is translated by AI.
+:::
+
+`MODOBJ` — replaces the description (text) of an item with the specified name and its image with the ones you need. General syntax:
+
+```qsp
+MODOBJ [$name], [$description], [$image]
+```
+
+, where:
+
+- `[$name]` is the name you specified when adding the item to the items window (inventory) using the `ADDOBJ` statement;
+- `[$description]` is the text you want to see in the items window instead of the name;
+- `[$image]` is the path to the image you want to see in the items window instead of the one added (or not added) with the `ADDOBJ` statement.
+
+This statement allows you to change the displayed item name on the screen and its icon in the items window. At the same time, the actual item name does not change, so $selobj continues to return the name that was used when creating the item with the ADDOBJ command. Example:
+
+```qsp
+addobj "Orange" & ! create the "Orange" item
+modobj "Orange", "Orange (1 pc.)" & ! change the displayed name
+! on the screen we see "Orange (1 pc.)", but when we click this item:
+*pl $selobj & ! $selobj returns "Orange"
+```
+
+:::warning [Pay attention!!!]
+
+If you have added several items with the same name to the items window, then when using modobj the displayed name will change for all of them.
+
+:::
+
+The practical use of this statement becomes clear if we look at one of the most common tasks in QSP: displaying an item status in the inventory.
+
+It can be a "Flashlight" (Flashlight on/Flashlight off), a "Water flask" (Flask full/Flask empty), a "Battery" (Battery charged/Battery discharged), and so on.
+
+Before `MODOBJ` appeared, to change the item status you had to delete the item with the old name and then add an item with the new name in the same position:
+
+```qsp
+act "Turn off the flashlight":
+  delobj "Flashlight on"
+  addobj "Flashlight off"
+end
+```
+
+This is quite simple, but the problem is that "Flashlight on" could be in the second position (second line of the list in the items window), and with such a "switching off", "Flashlight off" will be added to the last position. Visually it does not look like a status change.
+
+An obvious solution is to "remember" the item position as well as its state:
+
+```qsp
+act "Turn off the flashlight":
+  if flashlight_on:
+    delobj "Flashlight on"
+    if flashlight = 0: flashlight = countobj + 1
+    addobj "Flashlight off", "", flashlight
+    flashlight_on = 0
+  else:
+    *pl "The flashlight is already off"
+  end
+end
+act "Turn on the flashlight":
+  if no flashlight_on:
+    delobj "Flashlight off"
+    if flashlight = 0: flashlight = countobj + 1
+    addobj "Flashlight on", "", flashlight
+    flashlight_on = 1
+  else:
+    *pl "The flashlight is already on"
+  end
+end
+```
+
+The `MODOBJ` statement allows you not to store item positions and not to search for an item with the specified name in the list, especially if all items in the game are unique.
+
+```qsp
+if no obj('Flashlight'):
+  ! add a switched-off flashlight
+  addobj 'Flashlight'
+  modobj 'Flashlight', 'Flashlight off'
+  flashlight_on = 0
+end
+act "Turn off the flashlight":
+  if flashlight_on:
+    modobj 'Flashlight', 'Flashlight off'
+    flashlight_on = 0
+  else:
+    *pl "The flashlight is already off"
+  end
+end
+act "Turn on the flashlight":
+  if no flashlight_on:
+    modobj 'Flashlight', 'Flashlight on'
+    flashlight_on = 1
+  else:
+    *pl "The flashlight is already on"
+  end
+end
+```
+
+This not only saves lines of code but also reduces the number of variables used in the game.
+
 ## MSG
 
 `MSG` — displays the specified message in a dialog box. General syntax:
@@ -1618,6 +1720,20 @@ If the file is already playing, the volume changes without "restarting" it. Mult
 `REFINT` — forced interface update (including color and font changes assigned using system variables).
 
 By default, interface update occurs 2 times per second (every 500 ms). See also the [`settimer`](#settimer) statement.
+
+## RESETOBJ
+
+:::warning [Attention!]
+This chapter is translated by AI.
+:::
+
+- `RESETOBJ` — resets the displayed name and icon of items with the specified name to the state at the time of addition using `ADDOBJ`. General syntax:
+
+```qsp
+RESETOBJ [$name]
+```
+
+, where `[$name]` is the item name that was used when adding the item to the items window using `ADDOBJ`.
 
 ## SAVEGAME
 
