@@ -398,65 +398,82 @@ Apostrophes can also be used for writing multi-line comments:
 '
 ```
 
-## Commercial "At" Symbol `@`
+## The "Commercial at" symbol `@`
 
-The commercial "at" symbol `@` is used to organize implicit calling of location-functions, simplifying syntax and replacing the `gosub` operator or `func` function. General syntax:
+The "Commercial at" symbol `@` is used to organize implicit calling of location-functions, simplifying the notation and replacing the `func` function or the `gosub` statement.
+
+General syntax for replacing `func`:
 
 ```qsp
 @[$location]([argument 0], [argument 1], ... , [argument 18])
 ```
 
-where `[$location]` is the name of the location whose code we want to execute without directly going to it. Arguments `[argument 0]`, `[argument 1]`, etc. can be used on this location, their values are automatically placed in variables `args[0]`, `args[1]`, etc. respectively. After processing the location, previous `args` values are restored. Using arguments is not mandatory; in this case, brackets can be omitted.
+General syntax for replacing `gosub`:
 
-When accessing a location using `@`, the base description of the location is added to the current description, base actions are added to current actions, and operators in the "Execute on visit" field are executed, then return to the original line (continuing code execution after the command with `@`).
+```qsp
+@@[$location] [argument 0], [argument 1], ... , [argument 18]
+@@[$location]([argument 0], [argument 1], ... , [argument 18])
+```
 
-The location name in implicit calling should not contain special characters, otherwise this may lead to non-functional code. You can use letters, numbers, underscores, and periods.
+where `[$location]` is the name of the location whose code we want to execute without directly going to it. Arguments `[argument 0]`, `[argument 1]`, etc. can be used on this location, their values are automatically placed in variables `args[0]`, `args[1]`, etc. respectively. After processing the location, the previous values of `args` are restored. Using arguments is optional, in which case the parentheses can be omitted.
+
+:::danger [Attention!]
+Do not put a space after the location name `[$location]`, before the parenthesis! Otherwise, the player will interpret this as passing a single argument of type *tuple*.
+:::
+
+When accessing a location using `@` (or `@@`), the base description of the location is added to the current description, base actions are added to the current actions, and the statements in the "Execute on visit" field are executed, then return to the original line (code execution continues after the command with `@` or `@@`).
+
+The location name in an implicit call should not contain special characters, otherwise this may lead to code malfunction. You can use letters, numbers, underscore, and period.
 
 Examples:
 
 ```qsp
-!processing location "move". The args[] array is empty.
+! processing the "move" location. The args[] array is empty.
 @move()
 
-!processing location "move" with passing 3 parameters.
+! processing the "move" location with 3 parameters passed.
 ! $args[0] = $var (value), args[1] = 2,
-! $args[2] = "data". Note the '$' symbols.
+! $args[2] = "data". Pay attention to the '$' symbols.
 @move($var, 2, 'data')
 ```
 
 ```qsp
-! this is the code for calling location "transition"
-@transition('location')
+! this is the code for calling the "transition" location
+@@transition('location')
 
-! and this is the code of the location "transition" itself
+! and this is the code of the "transition" location itself
 # transition
-*pl $args[0]  & ! the text 'location' will be displayed on screen
+*pl $args[0]  & ! the text 'location' will be displayed on the screen
 ! a new action will appear in the actions window:
 act 'go':
     goto "street"
 end
-- transition
+-- transition
 ```
 
 ```qsp
-! location code for a function that gets the sum of a series of numbers from one to the specified value
+! code of the location for a function that gets the sum of a series of numbers from one to the specified value
 # summ
 ! args[0] will contain the number we specify as [argument 0]
 loop while args[0] > 0 step args[0] -= 1:
     result += args[0]
 end
-- summ
+-- summ
 
-! example of calling location "summ" as a function
-*pl @summ(19) & ! will display 190 on screen
+! example of calling the "summ" location as a function
+*pl @summ(19) & ! will display 190 on the screen
 ```
 
-:::warning[Note!]
-Implicit location-function calling replaces both `gosub` and `func`, therefore:
+:::warning [Pay attention!]
+An implicit call to a location-function using `@` replaces `func`, however:
 
-1. if your location-function returns a result, implicit calling of such a location will work exactly the same as explicit calling through `func`;
-2. if the location-function doesn't return a result, then when using it with the **[implicit statement](qsp-keywords-statements.md#implicit-statement)** it will work like explicit calling through `gosub`.
+1. if your location-function returns a result, an implicit call to such a location will work exactly the same as an explicit call via `func`;
+2. if the location-function does not return a result, then when using it with an **[implicit statement](qsp-keywords-statements.md#implicit-statement)** it will work as an explicit call via `gosub`.
 
+:::
+
+:::warning [Also:]
+The duplicated "commercial at" symbol `@@` is used only for implicit calls to `gosub`. I.e., with such a call, the location will never return a result.
 :::
 
 ## Dollar Sign Symbol `$`

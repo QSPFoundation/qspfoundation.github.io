@@ -9,7 +9,7 @@ sidebar_position: 6
 Crossed out commands do not work in players version 5.8.0 and above.
 :::
 
-- [Implicit statement](qsp-keywords-statements#implicit-operator)
+- [Implicit statement](qsp-keywords-statements#implicit-statement)
 - [`!` (comment)](qsp-keywords-statements.md#-comment)
 - [`!` (not equal)](qsp-keywords-operators.md#-not-equal-1)
 - [`&` (concatenation)](qsp-keywords-operators.md#-concatenation)
