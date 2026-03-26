@@ -40,7 +40,7 @@ tags:
 
     - Скачать можно по ссылке из [темы на форуме](https://qsp.org/forum/281), посвящённой Анализатору.
     - Или из архива на меге ["QSP/Программы"](https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A). ← Смотрите папку "QSP-Analyser". Для первого раза лучше выбрать последнюю версию без модификаций.
-    - Краткая информация доступна [на форуме](https://qsp.org/index.php?option=com_agora&task=topic&id=365&Itemid=57) и в [архиве статей](https://aleksversus.github.io/howdo_faq/docs/informarch/general/code_analyser).
+    - Краткая информация доступна [на форуме](https://qsp.org/forum/281) и в [архиве статей](https://aleksversus.github.io/howdo_faq/docs/informarch/general/code_analyser).
 
 3. Для просмотра игры в формате текстовых файлов подойдёт любой текстовый редактор. Рекомендуем Sublime Text или VS Code — они поддерживают подсветку синтаксиса QSP.
 
