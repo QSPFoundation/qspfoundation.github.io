@@ -101,7 +101,7 @@ flowchart TD
 
 Теперь игрок может:
 
-* Скачать игру с [каталога на QSP](https://qsp.org/index.php?option=com_sobi2&Itemid=55) и воспроизвести ее в плеерах
+* Скачать игру с [каталога на QSP](https://qsp.org/games) и воспроизвести ее в плеерах
 * Запустить игру с [QSpider](https://dev.qsp.org/qspider)
 
   Там можно либо:

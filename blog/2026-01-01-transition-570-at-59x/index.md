@@ -33,12 +33,12 @@ tags:
 
 1. **Утилита TXT2GAM** — конвертирует игру в формат текстового файла и обратно.
 
-    - Скачать можно с [официального сайта](https://qsp.org/index.php?option=com_content&task=view&id=52&Itemid=56) или [со страницы релизов](https://github.com/QSPFoundation/txt2gam/releases) на GitHub.
+    - Скачать можно <!--с [официального сайта](https://qsp.org/index.php?option=com_content&task=view&id=52&Itemid=56) или--> [со страницы релизов](https://github.com/QSPFoundation/txt2gam/releases) на GitHub.
     - Если не знаете, как пользоваться утилитой, прочитайте [краткое руководство](https://wiki.qsp.org/help:txt2gam).
 
 2. **Анализатор QSP-кода** — быстро сканирует игру в формате текстового файла и предоставляет список возможных ошибок, имена переменных, локаций, действий, предметов и прочее.
 
-    - Скачать можно по ссылке из [темы на форуме](https://qsp.org/index.php?option=com_agora&task=topic&id=365&Itemid=57), посвящённой Анализатору.
+    - Скачать можно по ссылке из [темы на форуме](https://qsp.org/forum/281), посвящённой Анализатору.
     - Или из архива на меге ["QSP/Программы"](https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A). ← Смотрите папку "QSP-Analyser". Для первого раза лучше выбрать последнюю версию без модификаций.
     - Краткая информация доступна [на форуме](https://qsp.org/index.php?option=com_agora&task=topic&id=365&Itemid=57) и в [архиве статей](https://aleksversus.github.io/howdo_faq/docs/informarch/general/code_analyser).
 

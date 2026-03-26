@@ -100,7 +100,7 @@ Later, the game developer publishes game resources to:
 
 Now the player can:
 
-* Download the game from the [QSP catalog](https://qsp.org/index.php?option=com_sobi2&Itemid=55) and play it in players
+* Download the game from the [QSP catalog](https://qsp.org/games) and play it in players
 * Launch the game with [QSpider](https://dev.qsp.org/qspider)
 
   There you can either:
