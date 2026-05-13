@@ -45,7 +45,7 @@ tags:
 3. Для просмотра игры в формате текстовых файлов подойдёт любой текстовый редактор. Рекомендуем Sublime Text или VS Code — они поддерживают подсветку синтаксиса QSP.
 
     - Для Sublime Text разработан [пакет](https://github.com/QSPFoundation/sublime_text_qsp_package), включающий плагин для работы с qsps-файлами и подсветку синтаксиса QSP.
-    - Для VS Code существует [специальное расширение](https://github.com/QSPFoundation/Qsp.FSharp.VsCode).
+    - Для VS Code существует [специальное расширение](https://github.com/QSPFoundation/qsp-lsp) (и [не одно](https://github.com/QSPFoundation/Qsp.FSharp.VsCode)).
 
 Если вы используете системы контроля версий (например, Git), рекомендуем фиксировать каждое масштабное изменение в игре.
 

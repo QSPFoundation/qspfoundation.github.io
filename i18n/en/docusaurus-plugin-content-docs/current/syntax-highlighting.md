@@ -21,6 +21,7 @@ VS Code has two highlighting methods:
 
 * Semantic highlighting
   * Combination of `Qsp.FSharp.Parser`, `Qsp.FSharp.ServerLanguage` and `Qsp.FSharp.VsCode`
+  * `qsp-lsp` for VsCode
 
 ## Highlighting in Sublime Text
 

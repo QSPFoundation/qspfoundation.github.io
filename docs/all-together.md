@@ -12,7 +12,7 @@ graph TD
   QGen --> |компилирует| БинарныйФайл[Бинарный файл игры .qsp]
 
   Редактор --> |бывает| VSCode[VS Code]
-  VSCode --> |редактирует и проверяет код| Qsp.FSharp.VsCode[Qsp.FSharp.VsCode]
+  VSCode --> |редактирует и проверяет код| Qsp.FSharp.VsCode[qsp-lsp / Qsp.FSharp.VsCode]
 
   VSCode --> |генерирует| ГолыеИсходники
 
@@ -43,7 +43,7 @@ graph TD
 
 Если в Sublime Text, то при проверке кода используется расширение JAD_for_QSP
 
-Если в VS Code, то при написании кода используется расширение Qsp.FSharp.VsCode
+Если в VS Code, то при написании кода используется расширение qsp-lsp или Qsp.FSharp.VsCode
 
 QGen преобразовывает исходник в бинарный файл игры
 

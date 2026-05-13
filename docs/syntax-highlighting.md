@@ -21,6 +21,7 @@ VS Code есть два способа подсветки:
 
 * семантическая подсветка
   * Связка `Qsp.FSharp.Parser`, `Qsp.FSharp.ServerLanguage` и `Qsp.FSharp.VsCode`
+  * `qsp-lsp` для VsCode
 
 ## Подсветка в Sublime Text
 
