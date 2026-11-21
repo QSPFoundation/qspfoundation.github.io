@@ -34,13 +34,13 @@ result = 123  & ! записываем число в переменную result
 N=24
 *pl func('square')  & ! выведет на экран 576
 *pl result  & ! выведет на экран 123
-- start -
+-- start --
 
 vase_on_desk = 0
 
 # square
 result = N * N
-- square -
+-- square --
 ```
 
 И ещё пример:
@@ -89,7 +89,7 @@ LineEndings при использовании подсветки в markdown-ф�
     ```
 
     При этом будет создан файл "`src/theme/prism-include-languages.ts`" (или `.js`).
-2. В папке "`src/theme"` создайте папку `qsp-syntax` и скопируйте в неё файл "`prism-qsp.js`", например, [отсюда](https://github.com/AleksVersus/howdo_faq/tree/docusaurus/src/theme). <!-- TODO: сейчас здесь установлена заглушка, ссылающаяся на мой справочник. Ссылка будет в скором времени нерабочей. Лучше изменить на актуальную после слияния веток -->
+2. В папке "`src/theme"` создайте папку `qsp-syntax` и скопируйте в неё файл "`prism-qsp.js`", например, [отсюда](https://github.com/QSPFoundation/qspfoundation.github.io/blob/main/src/theme/qsp-syntax/prism-qsp.js)).
 3. В файле "`src/theme/prism-include-languages.ts`" отредактируйте функцию `prismIncludeLanguages`:
 
     ```ts
@@ -128,7 +128,7 @@ LineEndings при использовании подсветки в markdown-ф�
         // ...
     ```
 
-    Или вы можете скачать готовую цветовую схему [отсюда](https://github.com/AleksVersus/howdo_faq/blob/docusaurus/src/css/qsp-syntax.css)<!-- TODO: сейчас здесь установлена заглушка, ссылающаяся на мой справочник. Ссылка будет в скором времени нерабочей. Лучше изменить на актуальную после слияния веток -->, и разместить её точно так же.
+    Или вы можете скачать готовую цветовую схему [отсюда](https://github.com/QSPFoundation/qspfoundation.github.io/blob/main/src/css/qsp-syntax.css), и разместить её точно так же.
 
 После сохранения и перезапуска сервера, или при сборке проекта, подсветка QSP-кода подхватится.
 
