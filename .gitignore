@@ -20,3 +20,11 @@ yarn-debug.log*
 yarn-error.log*
 
 .obsidian
+
+# Local DokuWiki reference articles
+/docu_at_wiki/wiki.qsp.org.out/
+/docu_at_wiki/output/
+/docu_at_wiki/.state/
+/docu_at_wiki/.venv/
+/docu_at_wiki/*.egg-info/
+/docu_at_wiki/**/__pycache__/
