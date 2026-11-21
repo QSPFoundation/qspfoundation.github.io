@@ -2,4 +2,4 @@ position: 999999
 label: QSP-Wiki Additionals
 link: null
 customProps:
-  qsp-docs-hidding: true
+  qsp-docs-hidden: true
