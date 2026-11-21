@@ -48,11 +48,43 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // This filter hide the partitions from categories-list by
+          // customProps:
+          //   qsp-docs-hidden: true
+          async sidebarItemsGenerator({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+
+            function filterHiddenCategories(
+              items: typeof sidebarItems,
+            ): typeof sidebarItems {
+              return items.reduce<typeof sidebarItems>(
+                (filteredItems, item) => {
+                  if (item.type !== 'category') {
+                    filteredItems.push(item);
+                  } else if (
+                    item.customProps?.['qsp-docs-hidden'] !== true
+                  ) {
+                    filteredItems.push({
+                      ...item,
+                      items: filterHiddenCategories(item.items),
+                    });
+                  }
+                  return filteredItems;
+                },
+                [],
+              );
+            }
+
+            return filterHiddenCategories(sidebarItems);
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/QSPFoundation/qspfoundation.github.io/edit/main/',
-          remarkPlugins: [remarkBreaks],
+          // editUrl:
+          //   'https://github.com/QSPFoundation/qspfoundation.github.io/edit/main/',
+          // remarkPlugins: [remarkBreaks],
         },
         blog: {
           showReadingTime: true,
