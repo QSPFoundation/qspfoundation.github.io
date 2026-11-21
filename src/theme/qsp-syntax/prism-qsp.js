@@ -229,6 +229,8 @@ Prism.languages.qsp = {
         alias: 'punctuation',
         inside: {},
     },
+    'start-location': /^[ \t]*#[ \t]+\S.*$/m,
+    'end-location': /^[ \t]*--.*$/m,
     'string': [interpolated_string('"'), interpolated_string("'")],
     'user-call': {
         pattern: RegExp(`(^|[${delimiter_chars}.])(@@?\\s*[^${delimiter_chars}]+)`, 'i'),
@@ -236,8 +238,6 @@ Prism.languages.qsp = {
         greedy: true,
         alias: 'function',
     },
-    'start-location': /^[ \t]*#[ \t]+\S.*$/m,
-    'end-location': /^[ \t]*--.*$/m,
     'sys-variable': named_token(`${type_prefix}?(?:${system_vars})`),
     'builtin': named_token(`${type_prefix}?(?:${functions})`),
     'number': [named_token('\\d+'), /\?/],
