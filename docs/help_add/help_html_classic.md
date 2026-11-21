@@ -36,7 +36,7 @@ sidebar_position: 4
 | EM         | [акцентирование](http://htmlbook.ru/html/em)                                                                               |                                                                                       |
 | FONT       | [изменение шрифта](http://htmlbook.ru/html/font)                                                                           | COLOR=[цвет]                                                                          |
 | ^          | ^                                                                                                                          | SIZE=[-2,-1,+0,+1,+2,+3,+4 или 1,2,3,4,5,6,7]                                         |
-| ^          | ^                                                                                                                          | FACE=[список названий шрифтов]<br>                                                    |
+| ^          | ^                                                                                                                          | FACE=[список названий шрифтов]                                                    |
 | HR         | [горизонтальная линия](http://htmlbook.ru/html/hr)                                                                         | ALIGN=[выравнивание]                                                                  |
 | ^          | ^                                                                                                                          | SIZE=[пиксели]                                                                        |
 | ^          | ^                                                                                                                          | WIDTH=[проценты\|пиксели]                                                             |
@@ -94,4 +94,4 @@ sidebar_position: 4
 
 ---
 
-[Назад: HTML](../qsp_wiki/oformlenie/help_html.mdx)
+[Назад: HTML](../qsp_wiki/oformlenie/help_html.md)
