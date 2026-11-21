@@ -1,0 +1,127 @@
+# Paths in this file are relative to this config file unless stated otherwise.
+source_root = "../docs"
+source_sections = ["qsp_wiki", "help_add"]
+output_dir = "output"
+state_file = ".state/hashes.json"
+
+# Explicit mapping: source path relative to source_root -> DokuWiki page ID.
+[pages]
+"qsp_wiki/help_acts.md" = "help:acts"
+"qsp_wiki/help_glossary.md" = "help:glossary"
+"qsp_wiki/help_goto.md" = "help:goto"
+"qsp_wiki/help_limits.md" = "help:limits"
+"qsp_wiki/help_locations.md" = "help:locations"
+"qsp_wiki/help_objs.md" = "help:objs"
+"qsp_wiki/help_qsp.md" = "help:qsp"
+"qsp_wiki/howto_start.md" = "howto:start"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_classic_qsp.md" = "help:classic_qsp"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider.md" = "help:qspider"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider_aeroqsp.md" = "help:qspider_aeroqsp"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider_gamecfg.md" = "help:qspider_gamecfg"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider_inclib.md" = "help:qspider_inclib"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider_interface.md" = "help:qspider_interface"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider_spectags.md" = "help:qspider_spectags"
+"qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider_themes.md" = "help:qspider_themes"
+"qsp_wiki/oformlenie/help_graphics.md" = "help:graphics"
+"qsp_wiki/oformlenie/help_html.md" = "help:html"
+"qsp_wiki/oformlenie/help_interface.md" = "help:interface"
+"qsp_wiki/oformlenie/help_menu.md" = "help:menu"
+"qsp_wiki/oformlenie/help_sound.md" = "help:sound"
+"qsp_wiki/programmirovanie/help_arrays.md" = "help:arrays"
+"qsp_wiki/programmirovanie/help_coding.md" = "help:coding"
+"qsp_wiki/programmirovanie/help_conditional.md" = "help:conditional"
+"qsp_wiki/programmirovanie/help_cycle.md" = "help:cycle"
+"qsp_wiki/programmirovanie/help_dynamical.md" = "help:dynamical"
+"qsp_wiki/programmirovanie/help_expressions.md" = "help:expressions"
+"qsp_wiki/programmirovanie/help_jump.md" = "help:jump"
+"qsp_wiki/programmirovanie/help_organizing.md" = "help:organizing"
+"qsp_wiki/programmirovanie/help_principle.md" = "help:principle"
+"qsp_wiki/programmirovanie/help_service_locations.md" = "help:service_locations"
+"qsp_wiki/programmirovanie/help_strings/help_regexp.md" = "help:regexp"
+"qsp_wiki/programmirovanie/help_strings/help_strings.md" = "help:strings"
+"qsp_wiki/programmirovanie/help_tuples.md" = "help:tuples"
+"qsp_wiki/programmirovanie/help_variables.md" = "help:variables"
+"qsp_wiki/rasshirennye-vozmozhnosti/help_inputs.md" = "help:inputs"
+"qsp_wiki/rasshirennye-vozmozhnosti/help_modules.md" = "help:modules"
+"qsp_wiki/rasshirennye-vozmozhnosti/help_realtime.md" = "help:realtime"
+"qsp_wiki/rasshirennye-vozmozhnosti/help_savegame.md" = "help:savegame"
+"qsp_wiki/start.md" = "start"
+"qsp_wiki/utility-i-sredstva-razrabotki/help_analyzer.md" = "help:analyzer"
+"qsp_wiki/utility-i-sredstva-razrabotki/help_debugger.md" = "help:debugger"
+"qsp_wiki/utility-i-sredstva-razrabotki/help_qgen.md" = "help:qgen"
+"qsp_wiki/utility-i-sredstva-razrabotki/help_txt2gam.md" = "help:txt2gam"
+"qsp_wiki/vyvod-teksta/help_main.md" = "help:main"
+"qsp_wiki/vyvod-teksta/help_msgbox.md" = "help:msgbox"
+"qsp_wiki/vyvod-teksta/help_stat.md" = "help:stat"
+"help_add/glossary_bag.md" = "glossary:bag"
+"help_add/help_classic_standalone.md" = "help:classic_standalone"
+"help_add/help_html_classic.md" = "help:html_classic"
+"help_add/help_keywords.md" = "help:keywords"
+"help_add/help_keywords_operator.md" = "help:keywords_operator"
+"help_add/help_multid_array.md" = "help:multid_array"
+"help_add/help_txt2gam_emeditor.md" = "help:txt2gam_emeditor"
+"help_add/help_txt2gam_linux.md" = "help:txt2gam_linux"
+"help_add/help_txt2gam_manual.md" = "help:txt2gam_manual"
+"help_add/help_txt2gam_preprocessor.md" = "help:txt2gam_preprocessor"
+"help_add/howto_arrays.md" = "howto:arrays"
+"help_add/howto_namedconst.md" = "howto:namedconst"
+"help_add/howto_randomize.md" = "howto:randomize"
+"help_add/howto_vscode_extension.md" = "howto:vscode_extension"
+"help_add/regex_start.md" = "regex:start"
+
+# These sources are placeholders and must not overwrite existing wiki pages.
+# Their targets remain available for resolving links from converted pages.
+[excluded_pages."help_add/glossary_snippet.md"]
+target = "glossary:snippet"
+reason = "Placeholder page; no article content yet."
+
+[excluded_pages."qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/help_qspider_standalone.md"]
+target = "help:qspider_standalone"
+reason = "Placeholder page; no article content yet."
+
+# Image mappings are relative to source_root. Wiki targets are existing media IDs.
+[images."qsp_wiki/help_ballad.jpg"]
+kind = "dokuwiki"
+target = "help:ballad.jpg"
+width = 300
+
+[images."qsp_wiki/help_input_window.png"]
+kind = "dokuwiki"
+target = "help:input_window.png"
+width = 300
+
+[images."qsp_wiki/help_level13.jpg"]
+kind = "dokuwiki"
+target = "help:level13.jpg"
+width = 342
+caption = ""
+
+[images."qsp_wiki/help_qspblank2.jpg"]
+kind = "dokuwiki"
+target = "help:qspblank2.jpg"
+width = 500
+
+[images."qsp_wiki/help_wiki_logo.png"]
+kind = "dokuwiki"
+target = "wiki:logo.png"
+
+[images."qsp_wiki/help_window_msg.png"]
+kind = "dokuwiki"
+target = "help:window_msg.png"
+width = 300
+
+[images."qsp_wiki/utility-i-sredstva-razrabotki/qgen.png"]
+kind = "dokuwiki"
+target = ":qgen.png"
+width = 450
+
+[images."qsp_wiki/vyvod-teksta/help_msgbox.png"]
+kind = "dokuwiki"
+target = "help:msgbox.png"
+width = 200
+
+# This image is external in the original wiki article, not a wiki media file.
+[images."qsp_wiki/nyuansy-napisaniya-igr-pod-raznye-pleery/help_qspider/image.png"]
+kind = "external"
+url = "https://i.ibb.co/8z8MHyp/image.png"
+width = 500
