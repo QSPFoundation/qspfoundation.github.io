@@ -11,6 +11,7 @@
 [data-theme='dark'] {
     --qsp-scope-user-variable: #e0e0e0;
     --qsp-scope-sys-variable: rgb(255,184,107);
+    --qsp-scope-builtin: rgb(36,147,164);
     --qsp-scope-number: rgb(80,250,123);
     --qsp-scope-operator: rgb(127,233,231);
     --qsp-scope-label: rgb(241,250,140);
@@ -35,7 +36,7 @@
     color: var(--qsp-scope-number);
 }
 
-.language-qsp .token.sign-punktuation,
+.language-qsp .token.sign-punctuation,
 .language-qsp .token.operator {
     color: var(--qsp-scope-operator);
 }
@@ -56,5 +57,33 @@
 
 .language-qsp .token.declarator {
     color: var(--qsp-scope-operator);
+    font-style: italic;
+}
+
+.language-qsp .token.interpolation.user-variable {
+    color: var(--qsp-scope-user-variable, #3a3a3a) !important;
+}
+
+.language-qsp .token.interpolation.sys-variable {
+    color: var(--qsp-scope-sys-variable) !important;
+}
+
+.language-qsp .token.interpolation.builtin,
+.language-qsp .token.interpolation.user-call {
+    color: var(--qsp-scope-builtin) !important;
+}
+
+.language-qsp .token.interpolation.number {
+    color: var(--qsp-scope-number, rgb(121, 76, 205)) !important;
+}
+
+.language-qsp .token.interpolation.operator,
+.language-qsp .token.interpolation.sign-punctuation,
+.language-qsp .token.interpolation.interpolation-punctuation {
+    color: var(--qsp-scope-operator, rgb(85, 169, 167)) !important;
+}
+
+.language-qsp .token.interpolation.declarator {
+    color: var(--qsp-scope-operator, rgb(85, 169, 167)) !important;
     font-style: italic;
 }
