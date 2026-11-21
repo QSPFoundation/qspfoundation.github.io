@@ -1,0 +1,40 @@
+---
+title: "TXT2GAM. Сборка для Linux"
+sidebar_position: 8
+---
+
+[Назад: Краткое руководство по **TXT2GAM**](../qsp_wiki/utility-i-sredstva-razrabotki/help_txt2gam.mdx)
+
+# TXT2GAM. Сборка для Linux {#txt2gam_sborka_dlja_linux}
+
+Быть может вам подойдёт уже собранная утилита одной из последних версий?
+
+[Последние версии TXT2GAM для разных платформ](https://github.com/QSPFoundation/txt2gam/releases)
+
+Исходники: [github/QSPFoundation/txt2gam](https://github.com/QSPFoundation/txt2gam)
+
+**Порядок сборки:**
+
+1. Скачиваем все файлы с расширениями `*.c` и `*.h` и помещаем их в один каталог.
+2. Открываем ваш терминал(gnome-terminal, xfce4-terminal, konsole или какой у вас там).
+3. Пишем в консоли
+
+   ```text
+   	cd путь/до/директории/куда/скачали/файлы
+   ```
+4. Пишем в консоли
+
+   ```text
+   	gcc main.c coding.c locations.c memwatch.c text.c -o txt2gam
+   ```
+5. Ждем, пока оно компилируется.
+6. ???
+7. PROFIT
+
+Теперь можете запустить программу, набрав в консоли
+
+```text
+./txt2gam
+```
+
+из той директории, где лежит откомпилированный файл.
